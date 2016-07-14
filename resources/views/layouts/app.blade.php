@@ -111,7 +111,7 @@
               </a>
           <ul class="treeview-menu">
             <li class="treeview">
-              <a href="/">
+              <a href="/admin">
                 <i class="fa fa-file-text-o" aria-hidden="true"></i>
                 <span>All News</span><span class="label label-default pull-right">{{count(App\News::all())}}</span>
               </a>

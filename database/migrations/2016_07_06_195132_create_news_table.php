@@ -15,11 +15,12 @@ class CreateNewsTable extends Migration
         Schema::create('news', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('category_id')->unsigned()->index();
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade')->onUpdate('cascade');
             $table->integer('subcategory_id')->unsigned()->index();
             $table->integer('user_id')->unsigned()->index();
-            $table->string('title_az');
-            $table->string('title_en');
-            $table->string('title_ru');
+            $table->string('title_az',70);
+            $table->string('title_en',70);
+            $table->string('title_ru',70);
             $table->string('short_desc_az');
             $table->string('short_desc_en');
             $table->string('short_desc_ru');

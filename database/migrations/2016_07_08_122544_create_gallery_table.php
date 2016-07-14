@@ -15,6 +15,7 @@ class CreateGalleryTable extends Migration
         Schema::create('gallery', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('news_id')->unsigned()->index();
+            $table->foreign('news_id')->references('id')->on('news')->onDelete('cascade')->onUpdate('cascade');
             $table->string('title_az');
             $table->string('title_en');
             $table->string('title_ru');

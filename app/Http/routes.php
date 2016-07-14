@@ -26,7 +26,7 @@ Route::group(['middleware'=>['web','auth']],function (){
 	Route::get('/gallery/{gallery}/delete' ,'FileController@delete');
 
 	//news
-	Route::get('/','NewsController@showNews');
+	Route::get('/admin','NewsController@showNews');
 	Route::get('/news/add','NewsController@addNews');
 	Route::post('/news/insert','NewsController@insert');
 	Route::get('/news/{news}/edit','NewsController@edit');
@@ -70,5 +70,12 @@ Route::get('/authorRegistration', function () {
     return view('registrationForm.register');});
 Route::post('/authorRegistration/submitted', 'MainController@register');
 Route::auth();
+
+
+
+
+// website
+
+Route::get('/','HomePageController@index');
 
 

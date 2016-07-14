@@ -5,7 +5,7 @@
 <div class="container">
     <div class="col-md-4 col-md-offset-4">
         <h1>Upload Gallery Photo</h1>
-        <form method="POST" action="/gallery/{{68}}/upload" enctype="multipart/form-data" accept-charset="UTF-8">
+        <form method="POST" action="/gallery/{{$news->id}}/upload" enctype="multipart/form-data" accept-charset="UTF-8">
              <input type="hidden" value="{{csrf_token() }}" name="_token"></input>
             <div class="form-group">
                 <label for="photo">Photo</label>

@@ -73,7 +73,7 @@
                                     <div class="col-md-6 col-sm-6 col-xs-12">
                                         <div class="row day_post_img ">
                                             <a href="#">
-                                                <img src="https://newevolutiondesigns.com/images/freebies/tropical-beach-background-8.jpg" alt="" >
+                                                <img src="<?php echo 'images/news_img/'.$newsAll->first()->main_img ?>" alt="" >
                                             </a>
                                            <!--  <div class="society"><p>Society</p></div> -->
                                         </div>

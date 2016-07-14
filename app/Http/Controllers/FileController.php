@@ -23,28 +23,28 @@ class FileController extends Controller
       $newsAll =News::all();
       return view('gallery.withnews',compact('newsAll'));
     }
-	  public function add()
+	  public function add(News $news)
     {
   	 	$gallery= Gallery::all();
-      $news   = News::all();
       return view('gallery.fileUpload',compact('gallery','news'));
     }
     public function store(Request $request,News $news)
     {
+      $img=\Image::make($request->file->getRealPath())->resize(70, 70);
       if ($request->file!="") { 
             $fileName   =$request->file->getClientOriginalName();
             $largeName  =time().'_'.'lg_img'.'_'.$fileName;
             $smallName  =time().'_'.'sm_img'.'_'.$fileName;
             $request->file->move('images/gallery_img/lg_img/',$largeName);
-            // $request->file->move('images/gallery_img/sm_img/',$smallName);
-
+            $smallPath = public_path('images/gallery_img/sm_img/' . $smallName);
+            $img->save($smallPath);
             $gallery = new Gallery;
             $gallery->news_id   =$news->id;
             $gallery->title_az  =$news->title_az;
             $gallery->title_en  =$news->title_en;
             $gallery->title_ru  =$news->title_ru;
             $gallery->path_large=$largeName;
-            $gallery->path_small='$smallName';
+            $gallery->path_small=$smallName;
             $gallery->save();
         }
         return redirect('/gallery');

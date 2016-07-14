@@ -3,7 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Admin Panel | Dashboard</title>
+  <title>Admin Panel</title>
+  <meta name="csrf-token" content="{{ csrf_token() }}" /> 
+
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -17,7 +19,7 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="/dist/css/skins/_all-skins.min.css">
-
+<script src="/plugins/jQuery/jquery-2.2.3.min.js"></script>
   <script src="//cdn.ckeditor.com/4.5.9/standard/ckeditor.js"></script>
   <!-- iCheck -->
 </head>
@@ -41,43 +43,32 @@
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-        @if(\Auth::user()->status==0)
-         <li class=" notifications-menu">
-            <a href="/requests" >
-              <i class="fa fa-user-plus" aria-hidden="true"></i>
-              <span class="label label-warning">{{count(App\Author::all())}}</span>
-            </a>
-          </li>
+         @if(\Auth::user()->status==0)
+           <li class=" notifications-menu">
+              <a href="/requests" >
+                   
+                <i class="fa fa-user-plus" aria-hidden="true"></i> 
+                @if(count(App\Author::all())!=0)
+                <span class="label label-warning authorCount"></span>
+                    @endif
+              </a>
+            </li>
           @endif
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <span class="hidden-xs">   
-              @if(!Auth::guest())
-                   {{\Auth::user()->first_name}} {{\Auth::user()->last_name}}
+                <span class="hidden-xs">   
+                @if(!Auth::guest())
+                     {{\Auth::user()->first_name}} {{\Auth::user()->last_name}}
                 @else
                 @endif
-                &nbsp;<i style="color:#00FF00" class="fa fa-circle-o" aria-hidden="true"></i>
+                &nbsp;<i class="fa fa-chevron-down" aria-hidden="true"></i>
               </span>
             </a>
-            <ul class="dropdown-menu">
-              <!-- User image -->
-              <li class="user-header">
-
-                <p>
-                  @yield('personInfo')
-                
-                </p>
-              </li>
+            <ul class="dropdown-menu" style="width:0 !important">
               <!-- Menu Body -->
-              <li class="user-footer">
-                <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
-                </div>
-                <div class="pull-right">
-                  <a href="{{ url('/logout') }}" class="btn btn-default btn-flat">Sign out</a>
-                </div>
-              </li>
+              <li >
+                  <a href="/logout" data-toggle="modal" data-target="#gridSystemModal" class=" dropdown-item btn-default ">Sign out</a> </li>
             </ul>
           </li>
         </ul>
@@ -209,6 +200,44 @@
        immediately after the control sidebar -->
   <div class="control-sidebar-bg"></div>
 </div>
+
+<script>
+   jQuery(document).ready(function($) {
+            $.ajaxSetup({
+            headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        function listen(event){         
+          $.ajax({
+                  url: '/checkAuthors',
+                  type: 'GET',          
+                  dataType:'json',
+                  data: {},
+                  success:function(count) {
+                    $('.authorCount').empty();
+                    $('.authorCount').append(count);
+                  // $('#authorCount').append("<b>"+checkAuthors.first_name+" "+userData.last_name+"</b>");
+                  // $('#delete').attr('href', '/nuser/delete/'+userData.id+'');
+                  },
+              
+              
+          });
+        };
+        // $('.editorsInfo').click(function(event) {
+        //   $.ajax({
+        //     url: '/editorsInfo',
+        //     type: 'GET',
+        //     dataType: 'html',
+        //     success:function (data) {
+        //        $('#content').html(data);
+        //     }
+        //   })
+          
+        // });
+        setInterval(listen,2000)
+        });
+</script>
 <!-- ./wrapper -->
 
 <!-- jQuery 2.2.3 -->

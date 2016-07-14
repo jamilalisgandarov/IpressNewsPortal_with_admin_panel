@@ -64,6 +64,12 @@ Route::group(['middleware'=>['web','auth']],function (){
 		Route::get('/editorsInfo', function (){
 		return view('adminPanel.editorsInfo');
 		});
+
+		
+		//Ajax Requests
+		Route::post('/userData', 'AjaxRequest@userData');
+		Route::post('/authorData', 'AjaxRequest@authorData');
+		Route::get('/checkAuthors', 'AjaxRequest@checkAuthors');
 	});
 });
 Route::get('/authorRegistration', function () {

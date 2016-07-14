@@ -18,6 +18,7 @@ Route::group(['middleware'=>['web','auth']],function (){
 
 	//gallery , slider 
 	Route::get('/gallery','FileController@index');
+	Route::get('/{news}/gallery','FileController@newsPhoto');
 	Route::get('/{news}/add/photo','FileController@add');
 	Route::get('/add/news/gallery','FileController@withNews');
 	Route::post('/gallery/{news}/upload','FileController@store');
@@ -66,10 +67,12 @@ Route::group(['middleware'=>['web','auth']],function (){
 		});
 
 		
-		//Ajax Requests
+		//Ajax Requests authors
 		Route::post('/userData', 'AjaxRequest@userData');
 		Route::post('/authorData', 'AjaxRequest@authorData');
 		Route::get('/checkAuthors', 'AjaxRequest@checkAuthors');
+		// news
+		Route::post('/newsData', 'AjaxRequest@newsData');
 	});
 });
 Route::get('/authorRegistration', function () {
@@ -78,7 +81,7 @@ Route::post('/authorRegistration/submitted', 'MainController@register');
 Route::auth();
 
 
-
+	
 
 // website
 

@@ -88,3 +88,27 @@
 	
 	
 @endsection
+<script>    
+        jQuery(document).ready(function($) {
+            $.ajaxSetup({
+            headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $('.delete').click(function(event) {           
+        $.ajax({
+                url: '/newsData',
+                type: 'POST',          
+                dataType:'json',
+                data: {id: $(this).attr('value')},
+                success:function(userData) {
+                $('.newsData').empty();
+                $('.userData').html("<b>"+userData.first_name+" "+userData.last_name+"</b>");
+                $('#delete').attr('href', '/user/delete/'+userData.id+'');
+                },
+            
+            
+        });
+        });
+            })
+</script>

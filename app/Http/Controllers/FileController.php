@@ -23,6 +23,12 @@ class FileController extends Controller
       $newsAll =News::all();
       return view('gallery.withnews',compact('newsAll'));
     }
+    public function newsPhoto(News $news)
+    {
+        return view('gallery.newsphoto',compact('news'));
+    }
+
+
 	  public function add(News $news)
     {
   	 	$gallery= Gallery::all();

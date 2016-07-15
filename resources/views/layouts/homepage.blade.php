@@ -179,108 +179,73 @@
                 <div class="row">
                 <div class="doublePort regtangle">
                 <p>What's Hot</p></div>
-                <div class="iPressSlide">
-                  <!-- slider bootstrap -->
-                    
-                    <div id="ICarousel" class="carousel slide" data-ride="carousel">
-                      <!-- Indicators -->
-                      <ol class="carousel-indicators right">
-                        <li data-target="#ICarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#ICarousel" data-slide-to="1">
-                          
-                        </li>
-                        <li data-target="#ICarousel" data-slide-to="2"></li>
-                      </ol>
-                      
-
-                      <!-- Wrapper for slides -->
-                      <div class="carousel-inner" role="listbox">
-                        <div class="item active">
-                            <div class="row">
-                  <div  class="col-md-4 col-xs-4">
-                  <div class="smallBox"></div>
-                  <div class="smallBox"></div>
-                  <div class="smallBox"></div>
-                  <div class="smallBox"></div>
-                  <div class="smallBox"></div>
+                <div class="row">
+                                            <div class="col-md-4 col-xs-4 small_img">
+                                                <a href="#">
+                                                    <img src="assets/images/content/1.png" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="col-md-8 col-xs-8 small_text">
+                                                <a href="#"> 
+                                                <p>A New Yorker doesn't necessarily come from</p></a>
+                                                <p> 2 day ago<p><div class="back"><div class="reyt">9.45</div><i class="fa fa-star-o star" aria-hidden="true"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="line"></div>
+                                       <div class="row">
+                                            <div class="col-md-4 col-xs-4 small_img">
+                                                <a href="#">
+                                                    <img src="assets/images/content/1.png" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="col-md-8 col-xs-8 small_text">
+                                                <a href="#"> 
+                                                <p>A New Yorker doesn't necessarily come from</p></a>
+                                                <p> 2 day ago<p><div class="back"><div class="reyt">9.45</div><i class="fa fa-star-o star" aria-hidden="true"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="line"></div>
+                                       <div class="row">
+                                            <div class="col-md-4 col-xs-4 small_img">
+                                                <a href="#">
+                                                    <img src="assets/images/content/1.png" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="col-md-8 col-xs-8 small_text">
+                                                <a href="#"> 
+                                                <p>A New Yorker doesn't necessarily come from</p></a>
+                                                <p> 2 day ago<p><div class="back"><div class="reyt">9.45</div><i class="fa fa-star-o star" aria-hidden="true"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="line"></div>
+                                            
+                                        <div class="row">
+                                            <div class="col-md-4 col-xs-4 small_img">
+                                                <a href="#">
+                                                    <img src="assets/images/content/1.png" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="col-md-8 col-xs-8 small_text">
+                                                <a href="#"> 
+                                                <p>A New Yorker doesn't necessarily come from</p></a>
+                                                <p> 2 day ago<p><div class="back"><div class="reyt">9.45</div><i class="fa fa-star-o star" aria-hidden="true"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="line"></div>
+                                        <div class="row">
+                                            <div class="col-md-4 col-xs-4 small_img">
+                                                <a href="#">
+                                                    <img src="assets/images/content/1.png" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="col-md-8 col-xs-8 small_text">
+                                                <a href="#"> 
+                                                <p>A New Yorker doesn't necessarily come from</p></a>
+                                                <p> 2 day ago<p><div class="back"><div class="reyt">9.45</div><i class="fa fa-star-o star" aria-hidden="true"></i></div>
+                                            </div>
+                                        </div>
                 </div>
-                <div class="col-md-8 col-xs-8">
- <div class="textBox"><p>A New Yorker doesn't necessarily come from.</p>
-<span>3 minutes ago </span><div class="back"><div class="reyt">9.45</div><i class="fa fa-star-o star" aria-hidden="true"></i></div></div>
-<div class="textBox"><p>Can you guess the most 'overpaid' actor?</p>
-<span>12 days ago</span><div class="back"><div class="reyt">8</div><i class="fa fa-star-o star" aria-hidden="true"></i></div></div>
-                  <div class="textBox"><p>A New Yorker doesn't 
-necessarily come from.</p>
-<span>3 month ago</span></div>
-                  <div class="textBox"><p>Can you guess the most 
-'overpaid' actor?</p>
-<span>2 days ago</span></div>
-                  <div class="textBox"><p>A New Yorker doesn't 
-necessarily come from.</p>
-<span>12 month ago</span></div>
-                  
-                </div>
-                </div>
-                  </div>
-                  <div class="item">
-                            <div class="row">
-                  <div  class="col-md-4 col-xs-4">
-                  <div class="smallBox"></div>
-                  <div class="smallBox"></div>
-                  <div class="smallBox"></div>
-                  <div class="smallBox"></div>
-                  <div class="smallBox"></div>
-                </div>
-                <div class="col-md-8 col-xs-8">
- <div class="textBox"><p>A New Yorker doesn't necessarily come from.</p>
-<span>3 minutes ago </span><div class="back"><div class="reyt">9.45</div><i class="fa fa-star-o star" aria-hidden="true"></i></div></div>
-<div class="textBox"><p>Can you guess the most 'overpaid' actor?</p>
-<span>12 days ago</span><div class="back"><div class="reyt">8</div><i class="fa fa-star-o star" aria-hidden="true"></i></div></div>
-                  <div class="textBox"><p>A New Yorker doesn't 
-necessarily come from.</p>
-<span>3 month ago</span></div>
-                  <div class="textBox"><p>Can you guess the most 
-'overpaid' actor?</p>
-<span>2 days ago</span></div>
-                  <div class="textBox"><p>A New Yorker doesn't 
-necessarily come from.</p>
-<span>12 month ago</span></div>
-                  
-                </div>
-                </div>
-                  </div>
-                  <div class="item">
-                            <div class="row">
-                  <div  class="col-md-4 col-xs-4">
-                  <div class="smallBox"></div>
-                  <div class="smallBox"></div>
-                  <div class="smallBox"></div>
-                  <div class="smallBox"></div>
-                  <div class="smallBox"></div>
-                </div>
-                <div class="col-md-8 col-xs-8">
-                 <div class="textBox"><p>A New Yorker doesn't necessarily come from.</p>
-                <span>3 minutes ago </span><div class="back"><div class="reyt">9.45</div><i class="fa fa-star-o star" aria-hidden="true"></i></div></div>
-                <div class="textBox"><p>Can you guess the most 'overpaid' actor?</p>
-                <span>12 days ago</span><div class="back"><div class="reyt">8</div><i class="fa fa-star-o star" aria-hidden="true"></i></div></div>
-                  <div class="textBox"><p>A New Yorker doesn't 
-necessarily come from.</p>
-                <span>3 month ago</span></div>
-                  <div class="textBox"><p>Can you guess the most 
-'overpaid' actor?</p>
-<span>2 days ago</span></div>
-                  <div class="textBox"><p>A New Yorker doesn't 
-necessarily come from.</p>
-<span>12 month ago</span></div>
-                  
-                </div>
-                </div>
-                  </div>
-                         </div>
-                     </div>
-                  <!-- slider bootstrap -->
-                </div>
-              <div class="row">
+              <div class="row" >
               <br>
                 <div class="doublePort regtangle"><p>Footbal result</p></div>
                 <div class="result">
@@ -366,48 +331,75 @@ necessarily come from.</p>
                  <div class="row">
                  <br>
                   <div class="doublePort regtangle"><p>Reset Comments</p></div>
-                  <div class="row">
-                  <div  class="col-md-4 col-xs-4">
-                  <div class="smallBox"></div>
-                  <div class="line"></div>
-                  <div class="smallBox"></div>
-                  <div class="line"></div>
-                  <div class="smallBox"></div>
-                  <div class="line"></div>
-                  <div class="smallBox"></div>
-                </div>
-                <div class="col-md-8 col-xs-8 shrift">
-                      <div class="textBox"><b>Alex:</b>
-                        <p>Welcome to WordPress
-                        This is your first co...</p>
-                        <span>3 minutes ago </span>
-                        </div>
-                            <div class="line"></div>
-                  <div class="textBox"><b>Karoon:</b>
-
-                        <p>Welcome to WordPress
-                        This is your first co...</p>
-                        <span>3 minutes ago </span>
-                        </div>
-                            <div class="line"></div>
-                  <div class="textBox"><b>Admin:</b>
-
-                        <p>Welcome to WordPress
-                        This is your first co...</p>
-                        <span>3 minutes ago </span>
-                        </div>
-                            <div class="line"></div>
-                  <div class="textBox"><b>Michele Jk:</b>
-
-                        <p>Welcome to WordPress
-                        This is your first co...</p>
-                        <span>3 minutes ago </span>
-                        </div>
                   
-                </div>
-                </div>
-                
-              </div>
+                                        <div class="row">
+                                            <div class="col-md-4 col-xs-4 small_img">
+                                                <a href="#">
+                                                    <img src="http://www.intrawallpaper.com/static/images/hd-wallpaper-6_NLl9H49.jpg" alt="">
+                                                </a>
+                                            </div>
+
+                                            <div class="col-md-8 col-xs-8 small_text">
+                                                <a href="#"> 
+                                                <h5>A New Yorker doesn't necessarily come from</h5></a>
+                                                <p>3 minutes ago /<a href=""> 0 comments</a></p>
+                                            </div>
+                                        </div>
+                                        <div class="line"></div>
+                                        <div class="row">
+                                            <div class="col-md-4 col-xs-4 small_img">
+                                                <a href="#">
+                                                    <img src="https://img1.goodfon.ru/wallpaper/big/1/ca/foto-makro-kartinka-zelenye.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="col-md-8 col-xs-8 small_text">
+                                                <a href="#"> 
+                                                    <h5>A New Yorker doesn't necessarily come from</h5>
+                                                </a>
+                                                <p>3 minutes ago /<a href=""> 0 comments</a></p>
+                                            </div>
+                                        </div>
+                                        <div class="line"></div>
+                                        <div class="row">
+                                            <div class="col-md-4 col-xs-4 small_img">
+                                                <a href="#">
+                                                    <img src="assets/images/content/1.png" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="col-md-8 col-xs-8 small_text">
+                                                <a href="#"> 
+                                                <h5>A New Yorker doesn't necessarily come from</h5></a>
+                                                <p>3 minutes ago /<a href=""> 0 comments</a></p>
+                                            </div>
+                                        </div>
+                                        <div class="line"></div>
+                                        <div class="row">
+                                            <div class="col-md-4 col-xs-4 small_img">
+                                                <a href="#">
+                                                    <img src="assets/images/content/1.png" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="col-md-8 col-xs-8 small_text">
+                                                <a href="#"> 
+                                                <p>Alex</p></a>
+                                                <span>Welcome is WordPress</span> <a href=""><p> this is your first co...<p></a>
+                                            </div>
+                                        </div>
+                                        <div class="line"></div>
+                                        <div class="row">
+                                            <div class="col-md-4 col-xs-4 small_img">
+                                                <a href="#">
+                                                    <img src="assets/images/content/1.png" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="col-md-8 col-xs-8 small_text">
+                                                <a href="#"> 
+                                                <p>Alex</p></a>
+                                                <span>Welcome is WordPress</span> <a href=""><p> this is your first co...<p></a>
+                                            </div>
+                                        </div>
+                  
+              
             
           </div>
         </div>

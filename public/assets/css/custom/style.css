@@ -242,7 +242,7 @@ body {
       position: absolute;
       width: 100%;
       z-index: 1;
-      padding: 0px 38px; }
+      margin: 0px 38px; }
     #header-wrap .topNav .navbar-brand {
       text-transform: capitalize;
       color: #FFF !important;
@@ -536,6 +536,12 @@ body {
 
 #content-wrap {
   font-family: "Roboto" sans-serif; }
+  #content-wrap a {
+    text-decoration: none;
+    color: black; }
+  #content-wrap a:hover {
+    transition: all 0.2s;
+    color: red; }
   #content-wrap .regtangle:after {
     content: "";
     position: absolute;
@@ -936,6 +942,12 @@ body {
     #content-wrap .news .gallery .image img:hover {
       -webkit-transform: scale(1.3); }
 
+#sidebar-wrap a {
+  text-decoration: none;
+  color: black; }
+#sidebar-wrap a:hover {
+  transition: all 0.2s;
+  color: red; }
 #sidebar-wrap .doublePort {
   border: 1px solid black;
   background-color: black;
@@ -949,58 +961,60 @@ body {
     font-weight: 100;
     color: white; }
 #sidebar-wrap .line {
+  margin: 7px 0px 9px;
   border-top: #ddd dashed 1px; }
-#sidebar-wrap .smallBox {
+#sidebar-wrap .small_img {
+  margin-left: 15px;
   width: 70px;
-  height: 70px;
-  background-color: #787878;
-  margin: 13px;
-  margin-left: 0; }
-#sidebar-wrap .smallBox:hover {
+  height: 68px;
+  padding: 0;
+  background: gray;
+  overflow: hidden;
+  position: relative; }
+  #sidebar-wrap .small_img a {
+    text-decoration: none;
+    margin: auto;
+    position: absolute;
+    width: 100%;
+    height: 100%; }
+  #sidebar-wrap .small_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -webkit-transition: all 0.5s ease-in-out; }
+  #sidebar-wrap .small_img img:hover {
+    -webkit-transform: scale(1.3); }
+#sidebar-wrap .small_text p {
+  margin: 1.2% 0 1% 1%;
+  line-height: 140%;
+  letter-spacing: -0.2px; }
+#sidebar-wrap .small_text span {
+  letter-spacing: -0.2px; }
+#sidebar-wrap .small_text .back {
+  height: 20px;
+  background-color: #F0B520;
+  float: right;
+  margin-top: -17px;
+  margin-right: 65px;
+  overflow: hidden;
+  transition: all 1s ease; }
+#sidebar-wrap .small_text .back:hover {
   transition: all 1s ease;
   background: black; }
-#sidebar-wrap .textBox {
-  max-width: 155px;
-  height: 70px;
-  margin: 13px;
-  margin-left: 0; }
-  #sidebar-wrap .textBox p {
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    transition: all 1s ease; }
-  #sidebar-wrap .textBox span {
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    font-weight: 100; }
-  #sidebar-wrap .textBox p:hover {
-    color: red;
-    transition: all 1s ease; }
-  #sidebar-wrap .textBox .back {
-    height: 20px;
-    background-color: #F0B520;
-    float: right;
-    margin-top: 6px;
-    margin-right: 5px;
-    overflow: hidden;
-    transition: all 1s ease; }
-  #sidebar-wrap .textBox .back:hover {
-    transition: all 1s ease;
-    background: black; }
-  #sidebar-wrap .textBox .reyt {
-    font-size: 13px;
-    float: right;
-    color: white;
-    margin: 2px;
-    min-width: 15px; }
-  #sidebar-wrap .textBox .star {
-    color: white;
-    float: right;
-    margin: 2px;
-    margin-top: 3px;
-    margin-left: 5px;
-    font-size: 13px;
-    overflow: hidden; }
+#sidebar-wrap .small_text .reyt {
+  font-size: 13px;
+  float: right;
+  color: white;
+  margin: 2px;
+  min-width: 15px; }
+#sidebar-wrap .small_text .star {
+  color: white;
+  float: right;
+  margin: 2px;
+  margin-top: 3px;
+  margin-left: 5px;
+  font-size: 13px;
+  overflow: hidden; }
 #sidebar-wrap .result span {
   font-family: 'Roboto', sans-serif;
   font-size: 11px;
@@ -1227,7 +1241,12 @@ body {
       width: 70px;
       height: 70px; }
       #footer-wrap .small_div .imgM img {
-        width: 125px; }
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        -webkit-transition: all 0.5s ease-in-out; }
+      #footer-wrap .small_div .imgM img:hover {
+        -webkit-transform: scale(1.3); }
     #footer-wrap .small_div .small_text {
       font-size: 14px;
       color: white;

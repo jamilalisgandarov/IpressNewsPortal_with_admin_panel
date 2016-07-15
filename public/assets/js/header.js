@@ -170,5 +170,10 @@ jQuery(document).ready(function($) {
         }
         $langOn++;
     });
+    $('.dropdown').hover(function() {
+       $(this).children('ul.dropdown-menu').css('display', 'block');
+    }, function() {
+     $(this).children('ul.dropdown-menu').css('display', 'none');
+    });
  });
 

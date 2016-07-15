@@ -5,7 +5,14 @@
 
 #content-wrap{
 	font-family: "Roboto" sans-serif;
-
+	a{
+		text-decoration: none;
+		color: black;
+	}
+	a:hover{
+		transition: all 0.2s;
+		color:red;
+	}
 // all news header
 
 

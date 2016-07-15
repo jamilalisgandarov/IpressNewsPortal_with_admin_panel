@@ -59,7 +59,7 @@
                                     </div>
                                     <div class="col-md-6 col-sm-6 col-xs-12 day_post_text">
                                         <div>
-                                            <h3>{{str_limit($newsAll->first()->title_az,50)}}</h3>
+                                            <h3><a href="news/{{$newsAll->first()->id}}">{{str_limit($newsAll->first()->title_az,50)}}</a></h3>
                                             <p>3 hours ago / 0 comments</p>
                                             <p>{!! str_limit($newsAll->first()->short_desc_az ,200) !!}</p>
                                         </div>

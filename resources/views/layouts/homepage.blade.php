@@ -52,7 +52,7 @@
                                 </div>
                                 <div class="hotNewsTextMain">
                                     <div class="newsOverlay"></div>
-                                    <p class="hotNewsText">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    <p class="hotNewsText">{{App\News::first()->title_az}}</p>
                                 </div>
                             </a>
                         </div>
@@ -95,7 +95,7 @@
                     <div class="row topLogo">
                         <div class="container">
                             <div class="row">
-                                <div class="col-md-2 col-xs-12 row mainLogo flexDisplay"><img src="/assets/images/header/logo.png"></div>
+                                <div class="col-md-2 col-xs-12 row mainLogo flexDisplay"><a href="/"><img src="/assets/images/header/logo.png"></a></div>
                                 <div class="col-md-offset-2 flexDisplay advMain row col-md-8 ">
                                     <div class="adv hidden-xs">
                                         <img src="/assets/images/header/adv.jpg">
@@ -117,20 +117,22 @@
                                                 <span class="icon-bar"></span>
                                                 <span class="icon-bar"></span>
                                             </button>
-                                            <a class="navbar-brand" href="#">
+                                            <a class="navbar-brand" href="/">
                                                 <i class="fa fa-home" aria-hidden="true"></i>
                                             </a>
                                         </div>
                                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                                            <ul class="nav mainul navbar-nav">
+                                            <ul class="nav mainul dropdown navbar-nav">
                                             @foreach((App\Category::all()) as $category)
-                                                <li><a href="#">{{$category->title_az}}</a><span class="hover"></span></li>
-      {{--                                           <li><a href="#">Travel</a><span class="hover"></span></li>
-                                                <li><a href="#">People</a><span class="hover"></span></li>
-                                                <li><a href="#">Sports</a><span class="hover"></span></li>
-                                                <li><a href="#">Music</a><span class="hover"></span></li>
-                                                <li><a href="#">Forum</a><span class="hover"></span></li>
-                                                <li><a href="#">Contact</a><span class="hover"></span></li> --}}
+                                                <li class="dropdown">
+                                                     <a class="dropdown-toggle" data-toggle="dropdown" role="button">{{$category->title_az}}</a><span class="hover"></span>
+                                                     <ul class="dropdown-menu" >
+                                                     @foreach($category->subcategories->all() as $subcategory)
+                                                        <li><a href="/news/category/{{$subcategory->id}}">{{ $subcategory->title_az}}</a></li>
+                                                      
+                                                        @endforeach
+                                                     </ul>
+                                                </li>
                                             @endforeach
                                                 <ul class="nav navbar-nav navbar-right" style="margin:0px;">
                                                     <li>

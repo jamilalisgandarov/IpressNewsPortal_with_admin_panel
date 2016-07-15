@@ -87,5 +87,6 @@ Route::auth();
 
 Route::get('/','HomePageController@index');
 Route::get('/news/{news}','HomePageController@show');
+Route::get('/news/category/{subcategory}','HomePageController@subcategory');
 
 

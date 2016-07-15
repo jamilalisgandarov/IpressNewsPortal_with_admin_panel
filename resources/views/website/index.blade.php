@@ -1,7 +1,6 @@
 @extends('layouts.homepage')
 
-@section('content')
-
+@section('header')
 
 <section id="slider-wrap" class="hidden-xs">
         <div class="container">
@@ -20,34 +19,9 @@
                                 @foreach(($newsAll->take(6)) as $slider)
                                 <div class="sliderNews noselect activeSlider triangle ">
                                         <div class="col-md-12 sliderNewsTitle"><h4 class="sliderNewsTitleColored">{{$slider->title_az}}</h4></div>
-                                        <div class="col-md-12 sliderNewsText"><span>{{str_limit($slider->short_desc_az,80)}}</span></div>
+                                        <div class="col-md-12 sliderNewsText"><span>{{-- {{str_limit($slider->short_desc_az,50)}} --}}</span></div>
                                 </div>
                                 @endforeach
-                                   {{--  <div class="sliderNews noselect activeSlider triangle ">
-                                        <div class="col-md-12 sliderNewsTitle"><h4 class="sliderNewsTitleColored">Here is the big title</h4></div>
-                                        <div class="col-md-12 sliderNewsText"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span></div>
-                                    </div>
-                                    <div class="sliderNews noselect">
-                                        <div class="col-md-12 sliderNewsTitle"><h4>Here is the big title</h4></div>
-                                        <div class="col-md-12 sliderNewsText"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span></div>
-                                    </div>
-                                    <div class="sliderNews noselect">
-                                        <div class="overlaySlider"></div>
-                                        <div class="col-md-12 sliderNewsTitle"><h4>Here is the big title</h4></div>
-                                        <div class="col-md-12 sliderNewsText"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span></div>
-                                    </div>
-                                    <div class="sliderNews noselect">
-                                        <div class="col-md-12 sliderNewsTitle"><h4>Here is the big title</h4></div>
-                                        <div class="col-md-12 sliderNewsText"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span></div>
-                                    </div>
-                                    <div class="sliderNews noselect">
-                                        <div class="col-md-12 sliderNewsTitle"><h4>Here is the big title</h4></div>
-                                        <div class="col-md-12 sliderNewsText"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span></div>
-                                    </div>
-                                    <div class="sliderNews noselect">
-                                        <div class="col-md-12 sliderNewsTitle"><h4>Here is the big title</h4></div>
-                                        <div class="col-md-12 sliderNewsText"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span></div>
-                                    </div> --}}
                                 </div>
                             </div>
                         </div>
@@ -56,11 +30,16 @@
             </div>
         </div>
     </section>
-        <div class="container">
-        <div class="row">
+
+@endsection
+
+
+@section('content')
+
+
 <!-- This section for Etibar -->
-<section id="content-wrap" class="col-md-9">
-                <div class="main row">
+
+               <div class="main row">
                     <div class="col-md-8 col-xs-12 high" style="padding-right: 8px;">
     <!-- post of the day  -->
                         <div class=" row">
@@ -171,6 +150,33 @@
                             <div class="col-md-12 carousel_main">
                                 <div class="over">
                                     <div class="carousel_move" id="carousel_move" draggable="true">
+                                    @foreach(($newsAll->take(10)) as $slider)
+                                        <div class="carousel_item">
+                                            <a href="#">
+                                                <img src="<?php echo '/images/news_img/'.$slider->main_img ?>">
+                                            </a>
+                                        </div>
+                                        @endforeach
+                                       {{--  <div class="carousel_item">
+                                            <a href="#">
+                                                <img src="http://www.themebin.com/wp-content/uploads/hd-wallpapers/1920x1200/modern_hd.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="carousel_item"> --}}
+                                      {{--       <a href="#">
+                                                <img src="assets/images/content/1.png" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="carousel_item">
+                                            <a href="#">
+                                           --}} {{--      <img src="http://www.themebin.com/wp-content/uploads/hd-wallpapers/1920x1200/modern_hd.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="carousel_item">
+                                            <a href="#">
+                                                <img src="assets/images/content/1.png" alt="">
+                                            </a>
+                                        </div>
                                         <div class="carousel_item">
                                             <a href="#">
                                                 <img src="http://www.intrawallpaper.com/static/images/dream_village_hd-HD_Zl7opxD.jpg" alt="">
@@ -178,34 +184,9 @@
                                         </div>
                                         <div class="carousel_item">
                                             <a href="#">
-                                                <img src="http://www.themebin.com/wp-content/uploads/hd-wallpapers/1920x1200/modern_hd.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="carousel_item">
-                                            <a href="#">
                                                 <img src="assets/images/content/1.png" alt="">
                                             </a>
-                                        </div>
-                                        <div class="carousel_item">
-                                            <a href="#">
-                                                <img src="http://www.themebin.com/wp-content/uploads/hd-wallpapers/1920x1200/modern_hd.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="carousel_item">
-                                            <a href="#">
-                                                <img src="assets/images/content/1.png" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="carousel_item">
-                                            <a href="#">
-                                                <img src="http://www.intrawallpaper.com/static/images/dream_village_hd-HD_Zl7opxD.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="carousel_item">
-                                            <a href="#">
-                                                <img src="assets/images/content/1.png" alt="">
-                                            </a>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                     <div class="right"><i class="fa fa-3x fa-chevron-right" aria-hidden="true"></i></div>
                                     <div class="left"><i class="fa fa-3x fa-chevron-left" aria-hidden="true"></i></div>
@@ -441,10 +422,12 @@
                                 </div>
                                 <div class="col-md-12 popular_tags_item">
                                     <div class="row">
+                                    @foreach($newsAll->all() as $newsTag)
                                         <div class="tag">
-                                            <p>Business</p>
+                                            <p>{{$newsTag->keywords}}</p>
                                         </div>
-                                        <div class="tag">
+                                    @endforeach
+                                        {{-- <div class="tag">
                                             <p>Sports</p>
                                         </div>
                                         <div class="tag">
@@ -466,8 +449,8 @@
                                             <p>world</p>
                                         </div>
                                         <div class="tag">
-                                            <p>popular tags</p>
-                                        </div>
+                                            <p>popular tags</p> --}}
+                                     {{--    </div>
                                         <div class="tag">
                                             <p>popular tags</p>
                                         </div>
@@ -476,7 +459,7 @@
                                         </div>
                                         <div class="tag">
                                             <p>popular tags</p>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
@@ -492,253 +475,6 @@
                     </div>
                 </div>
             </div>
-            </section>
-            <!-- This section for Sabina -->
-            <!-- This section for Sabina -->
-        <section id="sidebar-wrap">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-3 col-xs-12">
-                <div class="row">
-                <div class="doublePort regtangle">
-                <p>What's Hot</p></div>
-                <div class="iPressSlide">
-                  <!-- slider bootstrap -->
-                    
-                    <div id="ICarousel" class="carousel slide" data-ride="carousel">
-                      <!-- Indicators -->
-                      <ol class="carousel-indicators right">
-                        <li data-target="#ICarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#ICarousel" data-slide-to="1">
-                          
-                        </li>
-                        <li data-target="#ICarousel" data-slide-to="2"></li>
-                      </ol>
-                      
-
-                      <!-- Wrapper for slides -->
-                      <div class="carousel-inner" role="listbox">
-                        <div class="item active">
-                            <div class="row">
-                  <div  class="col-md-4 col-xs-4">
-                  <div class="smallBox"></div>
-                  <div class="smallBox"></div>
-                  <div class="smallBox"></div>
-                  <div class="smallBox"></div>
-                  <div class="smallBox"></div>
-                </div>
-                <div class="col-md-8 col-xs-8">
- <div class="textBox"><p>A New Yorker doesn't necessarily come from.</p>
-<span>3 minutes ago </span><div class="back"><div class="reyt">9.45</div><i class="fa fa-star-o star" aria-hidden="true"></i></div></div>
-<div class="textBox"><p>Can you guess the most 'overpaid' actor?</p>
-<span>12 days ago</span><div class="back"><div class="reyt">8</div><i class="fa fa-star-o star" aria-hidden="true"></i></div></div>
-                  <div class="textBox"><p>A New Yorker doesn't 
-necessarily come from.</p>
-<span>3 month ago</span></div>
-                  <div class="textBox"><p>Can you guess the most 
-'overpaid' actor?</p>
-<span>2 days ago</span></div>
-                  <div class="textBox"><p>A New Yorker doesn't 
-necessarily come from.</p>
-<span>12 month ago</span></div>
-                  
-                </div>
-                </div>
-                  </div>
-                  <div class="item">
-                            <div class="row">
-                  <div  class="col-md-4 col-xs-4">
-                  <div class="smallBox"></div>
-                  <div class="smallBox"></div>
-                  <div class="smallBox"></div>
-                  <div class="smallBox"></div>
-                  <div class="smallBox"></div>
-                </div>
-                <div class="col-md-8 col-xs-8">
- <div class="textBox"><p>A New Yorker doesn't necessarily come from.</p>
-<span>3 minutes ago </span><div class="back"><div class="reyt">9.45</div><i class="fa fa-star-o star" aria-hidden="true"></i></div></div>
-<div class="textBox"><p>Can you guess the most 'overpaid' actor?</p>
-<span>12 days ago</span><div class="back"><div class="reyt">8</div><i class="fa fa-star-o star" aria-hidden="true"></i></div></div>
-                  <div class="textBox"><p>A New Yorker doesn't 
-necessarily come from.</p>
-<span>3 month ago</span></div>
-                  <div class="textBox"><p>Can you guess the most 
-'overpaid' actor?</p>
-<span>2 days ago</span></div>
-                  <div class="textBox"><p>A New Yorker doesn't 
-necessarily come from.</p>
-<span>12 month ago</span></div>
-                  
-                </div>
-                </div>
-                  </div>
-                  <div class="item">
-                            <div class="row">
-                  <div  class="col-md-4 col-xs-4">
-                  <div class="smallBox"></div>
-                  <div class="smallBox"></div>
-                  <div class="smallBox"></div>
-                  <div class="smallBox"></div>
-                  <div class="smallBox"></div>
-                </div>
-                <div class="col-md-8 col-xs-8">
-                 <div class="textBox"><p>A New Yorker doesn't necessarily come from.</p>
-                <span>3 minutes ago </span><div class="back"><div class="reyt">9.45</div><i class="fa fa-star-o star" aria-hidden="true"></i></div></div>
-                <div class="textBox"><p>Can you guess the most 'overpaid' actor?</p>
-                <span>12 days ago</span><div class="back"><div class="reyt">8</div><i class="fa fa-star-o star" aria-hidden="true"></i></div></div>
-                  <div class="textBox"><p>A New Yorker doesn't 
-necessarily come from.</p>
-                <span>3 month ago</span></div>
-                  <div class="textBox"><p>Can you guess the most 
-'overpaid' actor?</p>
-<span>2 days ago</span></div>
-                  <div class="textBox"><p>A New Yorker doesn't 
-necessarily come from.</p>
-<span>12 month ago</span></div>
-                  
-                </div>
-                </div>
-                  </div>
-                         </div>
-                     </div>
-                  <!-- slider bootstrap -->
-                </div>
-                </div>
-              <div class="row">
-              <br>
-                <div class="doublePort regtangle"><p>Footbal result</p></div>
-                <div class="result">
-                <span>Saturday,7 December 2013 year</span>
-                <br><br>
-                  <table>
-                        <tr><td style="text-align: right"><p>Real Madrid</p></td><td><p>4 - 1</p></td><td><p>Man City</p></td ></tr>
-                        <tr><td style="text-align: right"><p>Barcelona</p></td><td><p>2 - 0</p></td><td><p>AC Milan</p></td ></tr>
-                        <tr><td style="text-align: right"><p>Alterico Madrid</p></td><td><p>2 - 2</p></td><td><p>AS Roma</p></td ></tr>
-                        <tr><td style="text-align: right"><p>Lion</p></td><td><p>0 - 3</p></td><td><p>Inter</p></td ></tr>
-                        </table>
-                </div>
-                <br>
-                <div class="iPressSlide">
-                  <!-- slider bootstrap -->
-                    
-                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                      <!-- Indicators -->
-                      <ol class="carousel-indicators" >
-                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#myCarousel" data-slide-to="1"></li>
-                        <li data-target="#myCarousel" data-slide-to="2"></li>
-                        <li data-target="#myCarousel" data-slide-to="3"></li>
-                      </ol>
-                      <!-- Wrapper for slides -->
-                      <div class="carousel-inner" role="listbox">
-                        <div class="item active">
-                          <div id="newsOne"><span>iPress Tweets @iPress<hr>iPress Tweets @iPressjhgfjsdf jdhb djhdg jdhg djhg ajdhg jdhfv jdhfb djhcbg djhg jdhfg djhffg djahg jdh gjahdg jhdghdugh aoidhg ;adkhgadjhfadfh gldjgLorem ipsum dolor sit</span></div>
-                        </div>
-                        <div class="item">
-                          <div id="newsOne"><span>iPress Tweets @iPress<hr>iPress Tweets @iPressjhgfjsdf jdhb djhdg jdhg djhg ajdhg jdhfv jdhfb djhcbg djhg jdhfg djhffg djahg jdh gjahdg jhdghdugh aoidhg ;adkhgadjhfadfh gldjgLorem ipsum dolor sit</span></div>
-                        </div>
-                        
-                        <div class="item">
-                          <div id="newsOne"><span>iPress Tweets @iPress<hr>iPress Tweets @iPressjhgfjsdf jdhb djhdg jdhg djhg ajdhg jdhfv jdhfb djhcbg djhg jdhfg djhffg djahg jdh gjahdg jhdghdugh aoidhg ;adkhgadjhfadfh gldjgLorem ipsum dolor sit</span></div>
-                        </div>
-                        <div class="item">
-                          <div id="newsOne"><span>iPress Tweets @iPress<hr>iPress Tweets @iPressjhgfjsdf jdhb djhdg jdhg djhg ajdhg jdhfv jdhfb djhcbg djhg jdhfg djhffg djahg jdh gjahdg jhdghdugh aoidhg ;adkhgadjhfadfh gldjgLorem ipsum dolor sit</span></div>
-                        </div>
-                        
-                      </div>
-                      
-                    </div>
-                  <!-- slider bootstrap -->
-                </div>
-              </div>
-              <div class="row">
-                 <br>
-                <div class="doublePort regtangle"><p>Polls</p></div>
-                <div class="radiusBtns">
-                  <h4 style="text-align: center"><p>How is my site</p></h4>
-                  <div class="radio">
-                    <label>
-                      <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                      Amazing
-                    </label>
-                  </div>
-                  <div class="radio">
-                    <label>
-                      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                      Good
-                    </label>
-                  </div>
-                  <div class="radio">
-                    <label>
-                      <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                      Can be inproved
-                    </label>
-                  </div>
-                  <div class="radio">
-                    <label>
-                      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                      Not comments
-                    </label>
-                    <br>
-                    <br>
-                    <button  type="button" class="btnHover btn btn-vote btn-sm">Vote</button>
-                    <button  type="button" class="btnHover btn btn-result btn-sm">View Result</button>
-                    <br>
-                  </div>
-                </div>
-              </div>
-                 <div class="row">
-                 <br>
-                  <div class="doublePort regtangle"><p>Reset Comments</p></div>
-                  <div class="row">
-                  <div  class="col-md-4 col-xs-4">
-                  <div class="smallBox"></div>
-                  <div class="line"></div>
-                  <div class="smallBox"></div>
-                  <div class="line"></div>
-                  <div class="smallBox"></div>
-                  <div class="line"></div>
-                  <div class="smallBox"></div>
-                </div>
-                <div class="col-md-8 col-xs-8 shrift">
-                      <div class="textBox"><b>Alex:</b>
-                        <p>Welcome to WordPress
-                        This is your first co...</p>
-                        <span>3 minutes ago </span>
-                        </div>
-                            <div class="line"></div>
-                  <div class="textBox"><b>Karoon:</b>
-
-                        <p>Welcome to WordPress
-                        This is your first co...</p>
-                        <span>3 minutes ago </span>
-                        </div>
-                            <div class="line"></div>
-                  <div class="textBox"><b>Admin:</b>
-
-                        <p>Welcome to WordPress
-                        This is your first co...</p>
-                        <span>3 minutes ago </span>
-                        </div>
-                            <div class="line"></div>
-                  <div class="textBox"><b>Michele Jk:</b>
-
-                        <p>Welcome to WordPress
-                        This is your first co...</p>
-                        <span>3 minutes ago </span>
-                        </div>
-                  
-                </div>
-                </div>
-                
-              </div>
-            
-          </div>
-        </div>
-      </div>
-    </section>
-        </div>
-    </div>
 
 
 @endsection

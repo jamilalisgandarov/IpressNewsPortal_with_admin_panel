@@ -65,9 +65,9 @@
               </a>
               <button type="button" class="btn btn-primary"  data-dismiss="modal">Back</button>
             </div>
-            </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-            </div><!-- /.modal -->
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
 <script>    
         jQuery(document).ready(function($) {
             $.ajaxSetup({

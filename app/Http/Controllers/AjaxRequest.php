@@ -28,7 +28,7 @@ class AjaxRequest extends Controller
             return $count;
         }
         // news
-        function newsData()
+        function newsData(Request $request)
         {
             if($request->ajax()){
             $newsData=News::find($request->id);

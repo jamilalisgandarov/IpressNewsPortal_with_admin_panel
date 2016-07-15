@@ -1,8 +1,14 @@
+#space{
+	height:30px;
+	width:100%;
+}
+
 #content-wrap{
-	
 	font-family: "Roboto" sans-serif;
 
 // all news header
+
+
 @mixin regtangle ($color,$padding,$margin,$left) {
 	.regtangle{
 		padding:$padding;
@@ -392,4 +398,23 @@
 		@include regtangle(black,2.3% 4%,15%,6%);
 	}
 
+
+// the new pages style
+	
+	.news{
+		.card{
+			img{
+				max-width:100%;
+				max-height:100%;
+			}
+		}
+		.gallery{
+			max-height: 300px;
+			.regtangle{
+			}
+			.image{
+				@include img_size();
+			}
+		}
+	}
 }

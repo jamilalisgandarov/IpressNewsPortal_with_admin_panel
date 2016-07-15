@@ -7,25 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>iPress News Portal</title>
     <!-- Bootstrap -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="assets/css/slick.css">
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/css/slick.css">
 
     <!-- <script src="https://use.fontawesome.com/5d33201c90.js"></script> -->
     <!-- Bootstrap -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="/assets/css/bootstrap.css" rel="stylesheet">
 
 
     <!-- Custom stylesheet -->
-    <link rel="stylesheet" type="text/css" href="assets/css/custom/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/custom/style.css">
 
 
-    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.css">
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 
     <!-- <link rel="stylesheet" type="text/css" href="assets/sass/partials/_footer.css"> -->
-    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.min.css">
        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -76,12 +76,12 @@
                                 <ul>
                                     <li>
                                         <div>
-                                            <img src="assets/images/header/fr.png">
+                                            <img src="/assets/images/header/fr.png">
                                         </div>
                                     </li>
                                     <li>
                                         <div>
-                                            <a href=""><img src="assets/images/header/fr.png"> </a>
+                                            <a href=""><img src="/assets/images/header/fr.png"> </a>
                                         <div>
                                     </li>
                                 </ul>
@@ -95,10 +95,10 @@
                     <div class="row topLogo">
                         <div class="container">
                             <div class="row">
-                                <div class="col-md-2 col-xs-12 row mainLogo flexDisplay"><img src="assets/images/header/logo.png"></div>
+                                <div class="col-md-2 col-xs-12 row mainLogo flexDisplay"><img src="/assets/images/header/logo.png"></div>
                                 <div class="col-md-offset-2 flexDisplay advMain row col-md-8 ">
                                     <div class="adv hidden-xs">
-                                        <img src="assets/images/header/adv.jpg">
+                                        <img src="/assets/images/header/adv.jpg">
                                     </div>
                                 </div>
                             </div>
@@ -156,12 +156,265 @@
                     </div>
     </section>
     <!-- This section for content -->
+            
+      @yield('header')
+  
+  <section id="space"></section>
+
+<div class="container">
+  <div class="row">
+    <section id="content-wrap" class="col-md-9 col-xs-12">
+
+      @yield('content')
     
+    </section>
+    <!-- This section for Sabina -->
+    <!-- This section for Sabina -->
+    <section id="sidebar-wrap" class="col-md-3 col-xs-12">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 ">
+                <div class="row">
+                <div class="doublePort regtangle">
+                <p>What's Hot</p></div>
+                <div class="iPressSlide">
+                  <!-- slider bootstrap -->
+                    
+                    <div id="ICarousel" class="carousel slide" data-ride="carousel">
+                      <!-- Indicators -->
+                      <ol class="carousel-indicators right">
+                        <li data-target="#ICarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#ICarousel" data-slide-to="1">
+                          
+                        </li>
+                        <li data-target="#ICarousel" data-slide-to="2"></li>
+                      </ol>
+                      
 
-    @yield('content')
+                      <!-- Wrapper for slides -->
+                      <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <div class="row">
+                  <div  class="col-md-4 col-xs-4">
+                  <div class="smallBox"></div>
+                  <div class="smallBox"></div>
+                  <div class="smallBox"></div>
+                  <div class="smallBox"></div>
+                  <div class="smallBox"></div>
+                </div>
+                <div class="col-md-8 col-xs-8">
+ <div class="textBox"><p>A New Yorker doesn't necessarily come from.</p>
+<span>3 minutes ago </span><div class="back"><div class="reyt">9.45</div><i class="fa fa-star-o star" aria-hidden="true"></i></div></div>
+<div class="textBox"><p>Can you guess the most 'overpaid' actor?</p>
+<span>12 days ago</span><div class="back"><div class="reyt">8</div><i class="fa fa-star-o star" aria-hidden="true"></i></div></div>
+                  <div class="textBox"><p>A New Yorker doesn't 
+necessarily come from.</p>
+<span>3 month ago</span></div>
+                  <div class="textBox"><p>Can you guess the most 
+'overpaid' actor?</p>
+<span>2 days ago</span></div>
+                  <div class="textBox"><p>A New Yorker doesn't 
+necessarily come from.</p>
+<span>12 month ago</span></div>
+                  
+                </div>
+                </div>
+                  </div>
+                  <div class="item">
+                            <div class="row">
+                  <div  class="col-md-4 col-xs-4">
+                  <div class="smallBox"></div>
+                  <div class="smallBox"></div>
+                  <div class="smallBox"></div>
+                  <div class="smallBox"></div>
+                  <div class="smallBox"></div>
+                </div>
+                <div class="col-md-8 col-xs-8">
+ <div class="textBox"><p>A New Yorker doesn't necessarily come from.</p>
+<span>3 minutes ago </span><div class="back"><div class="reyt">9.45</div><i class="fa fa-star-o star" aria-hidden="true"></i></div></div>
+<div class="textBox"><p>Can you guess the most 'overpaid' actor?</p>
+<span>12 days ago</span><div class="back"><div class="reyt">8</div><i class="fa fa-star-o star" aria-hidden="true"></i></div></div>
+                  <div class="textBox"><p>A New Yorker doesn't 
+necessarily come from.</p>
+<span>3 month ago</span></div>
+                  <div class="textBox"><p>Can you guess the most 
+'overpaid' actor?</p>
+<span>2 days ago</span></div>
+                  <div class="textBox"><p>A New Yorker doesn't 
+necessarily come from.</p>
+<span>12 month ago</span></div>
+                  
+                </div>
+                </div>
+                  </div>
+                  <div class="item">
+                            <div class="row">
+                  <div  class="col-md-4 col-xs-4">
+                  <div class="smallBox"></div>
+                  <div class="smallBox"></div>
+                  <div class="smallBox"></div>
+                  <div class="smallBox"></div>
+                  <div class="smallBox"></div>
+                </div>
+                <div class="col-md-8 col-xs-8">
+                 <div class="textBox"><p>A New Yorker doesn't necessarily come from.</p>
+                <span>3 minutes ago </span><div class="back"><div class="reyt">9.45</div><i class="fa fa-star-o star" aria-hidden="true"></i></div></div>
+                <div class="textBox"><p>Can you guess the most 'overpaid' actor?</p>
+                <span>12 days ago</span><div class="back"><div class="reyt">8</div><i class="fa fa-star-o star" aria-hidden="true"></i></div></div>
+                  <div class="textBox"><p>A New Yorker doesn't 
+necessarily come from.</p>
+                <span>3 month ago</span></div>
+                  <div class="textBox"><p>Can you guess the most 
+'overpaid' actor?</p>
+<span>2 days ago</span></div>
+                  <div class="textBox"><p>A New Yorker doesn't 
+necessarily come from.</p>
+<span>12 month ago</span></div>
+                  
+                </div>
+                </div>
+                  </div>
+                         </div>
+                     </div>
+                  <!-- slider bootstrap -->
+                </div>
+              <div class="row">
+              <br>
+                <div class="doublePort regtangle"><p>Footbal result</p></div>
+                <div class="result">
+                <span>Saturday,7 December 2013 year</span>
+                <br><br>
+                  <table>
+                        <tr><td style="text-align: right"><p>Real Madrid</p></td><td><p>4 - 1</p></td><td><p>Man City</p></td ></tr>
+                        <tr><td style="text-align: right"><p>Barcelona</p></td><td><p>2 - 0</p></td><td><p>AC Milan</p></td ></tr>
+                        <tr><td style="text-align: right"><p>Alterico Madrid</p></td><td><p>2 - 2</p></td><td><p>AS Roma</p></td ></tr>
+                        <tr><td style="text-align: right"><p>Lion</p></td><td><p>0 - 3</p></td><td><p>Inter</p></td ></tr>
+                        </table>
+                </div>
+                <br>
+                <div class="iPressSlide">
+                  <!-- slider bootstrap -->
+                    
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                      <!-- Indicators -->
+                      <ol class="carousel-indicators" >
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                        <li data-target="#myCarousel" data-slide-to="3"></li>
+                      </ol>
+                      <!-- Wrapper for slides -->
+                      <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                          <div id="newsOne"><span>iPress Tweets @iPress<hr>iPress Tweets @iPressjhgfjsdf jdhb djhdg jdhg djhg ajdhg jdhfv jdhfb djhcbg djhg jdhfg djhffg djahg jdh gjahdg jhdghdugh aoidhg ;adkhgadjhfadfh gldjgLorem ipsum dolor sit</span></div>
+                        </div>
+                        <div class="item">
+                          <div id="newsOne"><span>iPress Tweets @iPress<hr>iPress Tweets @iPressjhgfjsdf jdhb djhdg jdhg djhg ajdhg jdhfv jdhfb djhcbg djhg jdhfg djhffg djahg jdh gjahdg jhdghdugh aoidhg ;adkhgadjhfadfh gldjgLorem ipsum dolor sit</span></div>
+                        </div>
+                        
+                        <div class="item">
+                          <div id="newsOne"><span>iPress Tweets @iPress<hr>iPress Tweets @iPressjhgfjsdf jdhb djhdg jdhg djhg ajdhg jdhfv jdhfb djhcbg djhg jdhfg djhffg djahg jdh gjahdg jhdghdugh aoidhg ;adkhgadjhfadfh gldjgLorem ipsum dolor sit</span></div>
+                        </div>
+                        <div class="item">
+                          <div id="newsOne"><span>iPress Tweets @iPress<hr>iPress Tweets @iPressjhgfjsdf jdhb djhdg jdhg djhg ajdhg jdhfv jdhfb djhcbg djhg jdhfg djhffg djahg jdh gjahdg jhdghdugh aoidhg ;adkhgadjhfadfh gldjgLorem ipsum dolor sit</span></div>
+                        </div>
+                        
+                      </div>
+                      
+                    </div>
+                  <!-- slider bootstrap -->
+                </div>
+              </div>
+              <div class="row">
+                 <br>
+                <div class="doublePort regtangle"><p>Polls</p></div>
+                <div class="radiusBtns">
+                  <h4 style="text-align: center"><p>How is my site</p></h4>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                      Amazing
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                      Good
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                      Can be inproved
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                      Not comments
+                    </label>
+                    <br>
+                    <br>
+                    <button  type="button" class="btnHover btn btn-vote btn-sm">Vote</button>
+                    <button  type="button" class="btnHover btn btn-result btn-sm">View Result</button>
+                    <br>
+                  </div>
+                </div>
+              </div>
+                 <div class="row">
+                 <br>
+                  <div class="doublePort regtangle"><p>Reset Comments</p></div>
+                  <div class="row">
+                  <div  class="col-md-4 col-xs-4">
+                  <div class="smallBox"></div>
+                  <div class="line"></div>
+                  <div class="smallBox"></div>
+                  <div class="line"></div>
+                  <div class="smallBox"></div>
+                  <div class="line"></div>
+                  <div class="smallBox"></div>
+                </div>
+                <div class="col-md-8 col-xs-8 shrift">
+                      <div class="textBox"><b>Alex:</b>
+                        <p>Welcome to WordPress
+                        This is your first co...</p>
+                        <span>3 minutes ago </span>
+                        </div>
+                            <div class="line"></div>
+                  <div class="textBox"><b>Karoon:</b>
 
+                        <p>Welcome to WordPress
+                        This is your first co...</p>
+                        <span>3 minutes ago </span>
+                        </div>
+                            <div class="line"></div>
+                  <div class="textBox"><b>Admin:</b>
 
+                        <p>Welcome to WordPress
+                        This is your first co...</p>
+                        <span>3 minutes ago </span>
+                        </div>
+                            <div class="line"></div>
+                  <div class="textBox"><b>Michele Jk:</b>
 
+                        <p>Welcome to WordPress
+                        This is your first co...</p>
+                        <span>3 minutes ago </span>
+                        </div>
+                  
+                </div>
+                </div>
+                
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+    </div>
+</div>
+
+<section id="space"></section>
     <!-- This section for Aslan -->
     <section id="footer-wrap">
 
@@ -171,7 +424,7 @@
                     <div class="logo_bottom col-md-3">
                         <div class="row">
                             <div class=" logo col-md-12">
-                                <a href="index.html"><img src="assets/images/footer/ipress_logo.png"></a>
+                                <a href="index.html"><img src="/assets/images/footer/ipress_logo.png"></a>
                             </div>
                             <div class=" info col-md-12">
                                 <p>iPress is a  magazine Wordpress Theme. Nunc montes odio phasellus dignissim, aenean, nec augue velit integer elementum ut montes quis integer cursus, est purus, lectus duis, scelerisque tincidunt ultricies phasellus elementum turpis tristique.
@@ -185,16 +438,20 @@
                             <div class="same_top regtangle col-md-12">
                                 <h4>Recent Posts</h4>
                             </div>
+                            @foreach(App\News::orderBy('id', 'DESC')->get()->take(3) as $news)
+                           
                             <div class="small_div col-md-12">
                                 <div class="small_img col-md-4">
-                                    <div class="imgM pull-left"><a href="#"><img src="assets/images/footer/roma.jpg"></a></div>
+                                    <div class="imgM pull-left"><a href="#"><img src="<?php echo '/images/news_img/'.$news->main_img ?>"></a></div>
                                 </div>
                                 <div class="col-xs-6 col-md-8">
-                                    <p class="small_text">A New Yorker doesn't necessarily come from...</p>
-                                    <p class="last_update">3 minute ago</p>
+                                    <p class="small_text">{{$news->title_az}}</p>
+                                    <p class="last_update">{{Carbon\Carbon::createFromTimeStamp(strtotime($news->created_at))->diffForHumans()}}</p>
                                 </div>
                             </div>
-                             <div class="small_div col-md-12">
+                            @endforeach
+
+                          {{--    <div class="small_div col-md-12">
                                 <div class="small_img col-md-4">
                                     <div class="imgM pull-left"><a href="#"><img src="assets/images/footer/roma.jpg"></a></div>
                                 </div>
@@ -211,7 +468,7 @@
                                     <p class="small_text">A New Yorker doesn't necessarily come from...</p>
                                     <p class="last_update">15 days ago</p>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                     <!---->
@@ -220,22 +477,24 @@
                             <div class="same_top regtangle col-md-12">
                                 <h4>Best Reviews</h4>
                             </div>
+                             @foreach((App\News::all()->take(3)) as $news)
                             <div class="small_div col-md-12">
                                 <div class="small_img col-md-4">
-                                    <div class="imgM pull-left"><a href="#"><img src="assets/images/footer/roma.jpg"></a></div>
+                                    <div class="imgM pull-left"><a href="#"> <img src="<?php echo '/images/news_img/'.$news->main_img ?>"></a></div>
                                 </div>
                                 <div class="col-xs-8 col-md-8">
-                                    <p class="small_text">A New Yorker doesn't necessarily come from...</p>
+                                    <p class="small_text">{{$news->title_az}}</p>
                                     <div class="info_reviews row">
                                         <div class="reviews_rate pull-left col-md-1">
                                             <i class="fa fa-star-o" aria-hidden="true"><p>9.25</p></i>
                                         </div> 
-                                        <div class="reviews_category pull-left lightblue_bg"><a href="#"><p>Technology</p></a></div>
+                                        <div class="reviews_category pull-left lightblue_bg"><a href="#"><p>{{$news->category->title_az}}</p></a></div>
                                     </div>
                                 </div>
                             </div>
+                            @endforeach
                             <!--first Best div end-->
-                                     <div class="small_div col-md-12">
+                          {{--   <div class="small_div col-md-12">
                                 <div class="small_img col-md-4">
                                     <div class="imgM pull-left"><a href="#"><img src="assets/images/footer/roma.jpg"></a></div>
                                 </div>
@@ -248,8 +507,8 @@
                                         <div class="reviews_category pull-left blue_bg"><a href="#"><p>Entertainment</p></a></div>
                                     </div>
                                 </div>
-                            </div>
-                                    <div class="small_div col-md-12">
+                            </div> --}}
+                          {{--   <div class="small_div col-md-12">
                                 <div class="small_img col-md-4">
                                     <div class="imgM pull-left"><a href="#"><img src="assets/images/footer/roma.jpg"></a></div>
                                 </div>
@@ -262,7 +521,7 @@
                                         <div class="reviews_category pull-left green_bg"><a href="#"><p>People</p></a></div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                             <!--last best div end-->
                             </div>
                     </div>
@@ -305,31 +564,17 @@
                    
                 </div> 
             </div>
-        </div>
     </section>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="assets/js/jquery-1.12.4.js"></script>
+    <script src="/assets/js/jquery-1.12.4.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="assets/js/header.js"></script>
-    <script type="text/javascript" src="assets/js/container.js"></script>
-    <script type="text/javascript" src="assets/js/footer.js"></script>
-    <script type="text/javascript" src="assets/js/miniSlider.js"></script>
-    <script src="assets/js/slick.js"></script>
-    <script>CKEDITOR.replace( 'textarea_id', {
-    allowedContent: 'p b i; a[!href]',
-    on: {
-        instanceReady: function( evt ) {
-            var editor = evt.editor;
-
-            editor.filter.check( 'h1' ); // -> false
-            editor.setData( '<h1><i>Foo</i></h1><p class="left"><span>Bar</span> <a href="http://foo.bar">foo</a></p>' );
-            // Editor contents will be:
-            '<p><i>Foo</i></p><p>Bar <a href="http://foo.bar">foo</a></p>'
-        }
-    }
-} );</script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/assets/js/header.js"></script>
+    <script type="text/javascript" src="/assets/js/container.js"></script>
+    <script type="text/javascript" src="/assets/js/footer.js"></script>
+    <script type="text/javascript" src="/assets/js/miniSlider.js"></script>
+    <script src="/assets/js/slick.js"></script>
 </body>
 
 </html>

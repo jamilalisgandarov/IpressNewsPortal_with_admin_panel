@@ -31,7 +31,7 @@
 					<td>
 						@if(\Auth::user()->status==0||\Auth::user()->id==$news->user_id)
 						<a href="/news/{{$news->id}}/edit">
-							<button type="button" class="btn btn-default" aria-label="Left Align">
+							<button type="button" class="btn btn-default" id='#newsModal' aria-label="Left Align">
 								<span class="" aria-hidden="true">Edit</span>
 							</button>
 						</a>
@@ -43,7 +43,7 @@
 					</td>
 					<td>
 						@if(\Auth::user()->status==0||\Auth::user()->id==$news->user_id)
-							<button type="button" class="btn btn-default" data-toggle="modal" aria-label="Left Align" data-target="#gridSystemModal">
+							<button type="button" class="btn btn-default delete" data-toggle="modal" aria-label="Left Align" data-target="#gridSystemModal" value='{{$news->id}}'>
 								<span class="" aria-hidden="true">Delete</span>
 							</button>
 						@else
@@ -57,37 +57,53 @@
 
 				<!--modal-->
 
-				<div class="modal fade" tabindex="-1" role="dialog" id="gridSystemModal" aria-labelledby="	gridSystemModalLabel">
-					<div class="modal-dialog" role="document">
-						<div class="modal-content">
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-								<h4 class="modal-title" id="gridSystemModalLabel">Warning</h4>
-							</div>
-							<div class="modal-body">
-								<span>Do you want to delete: <b>{{$news->title_az}}</b> </span>
-							</div>
-							<div class="modal-footer">
-									@if(\Auth::user()->status==0||\Auth::user()->id==$news->user_id)
-										<a href="/news/{{$news->id}}/delete">
-											<button type="button" class="btn btn-danger">Delete</button>
-										</a>
-									@endif
-								<button type="button" class="btn btn-primary"  data-dismiss="modal">Back</button>
-							</div>
-						</div><!-- /.modal-content -->
-					</div><!-- /.modal-dialog -->
-				</div><!-- /.modal -->
+				
 			@endforeach
 				
 			</tbody>
 			
 		</table>
 	</div>
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
 
-	
-	
-@endsection
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p >Do you want to delete <span class='newsData'></span> </p>
+      </div>
+      <div class="modal-footer">
+        <a type="button" id='delete' class="btn btn-danger"  >Delete</a>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="modal fade" tabindex="-1" role="dialog" id="gridSystemModal" aria-labelledby="gridSystemModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="gridSystemModalLabel">Warning</h4>
+            </div>
+            <div class="modal-body">
+              <span>     Do you want to delete: <span class="newsData"></span>  ? </span>
+            </div>
+            <div class="modal-footer">
+              <a  href='/news/{{$news->id}}/delete'>
+                <button type="button" class="btn btn-danger">Delete</button>
+              </a>
+              <button type="button" class="btn btn-primary"  data-dismiss="modal">Back</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
 <script>    
         jQuery(document).ready(function($) {
             $.ajaxSetup({
@@ -101,10 +117,10 @@
                 type: 'POST',          
                 dataType:'json',
                 data: {id: $(this).attr('value')},
-                success:function(userData) {
+                success:function(newsData) {
                 $('.newsData').empty();
-                $('.userData').html("<b>"+userData.first_name+" "+userData.last_name+"</b>");
-                $('#delete').attr('href', '/user/delete/'+userData.id+'');
+                $('.newsData').html("<b>"+newsData.title_az+"</b>");
+                $('#delete').attr('href', '/news/'+newsData.id+'/delete');
                 },
             
             
@@ -112,3 +128,4 @@
         });
             })
 </script>
+@endsection

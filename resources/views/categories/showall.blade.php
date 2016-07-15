@@ -66,5 +66,3 @@
 </div>
 
 @endsection
-{{-- <option value="volvo">Volvo</option>
-<option value="saab">Saab</option> --}}

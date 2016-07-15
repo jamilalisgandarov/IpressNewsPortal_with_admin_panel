@@ -116,7 +116,7 @@ class NewsController extends Controller
         $news->visibility       =$request->visibility;
 
         $news->save();
-        return redirect('/');
+        return redirect('/admin');
     }
     public function delete(News $news)
     {

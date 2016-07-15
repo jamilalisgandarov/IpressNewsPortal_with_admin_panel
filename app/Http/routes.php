@@ -86,5 +86,6 @@ Route::auth();
 // website
 
 Route::get('/','HomePageController@index');
+Route::get('/news/{news}','HomePageController@show');
 
 

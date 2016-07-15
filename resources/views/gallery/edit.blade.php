@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-    <div class="col-md-4 col-md-offset-4">
+    <div class="col-md-6 col-md-offset-3">
         <h1>Edit Photo</h1>
         <div class="col-md-12">
             <img style='max-width:100%;max-height: 400px;'  src="<?php echo "/images/gallery_img/lg_img/$gallery->path_large" ?>">

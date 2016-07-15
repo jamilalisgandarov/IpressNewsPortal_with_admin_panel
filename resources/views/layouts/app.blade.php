@@ -185,11 +185,10 @@
     </section>
 
     <!-- Main content -->
-  
-@yield('content')
-
-
-  
+    <div style=" padding-right:25%;">
+    @yield('content')
+      
+    </div>
     <!-- /.content -->
   </div>
 

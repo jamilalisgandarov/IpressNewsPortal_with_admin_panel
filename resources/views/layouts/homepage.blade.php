@@ -173,8 +173,6 @@
     <!-- This section for Sabina -->
     <!-- This section for Sabina -->
     <section id="sidebar-wrap" class="col-md-3 col-xs-12">
-          <div class="container">
-            <div class="row">
               <div class="col-md-12 ">
                 <div class="row">
                 <div class="doublePort regtangle">
@@ -247,17 +245,8 @@
                 </div>
               <div class="row" >
               <br>
-                <div class="doublePort regtangle"><p>Footbal result</p></div>
-                <div class="result">
-                <span>Saturday,7 December 2013 year</span>
-                <br><br>
-                  <table>
-                        <tr><td style="text-align: right"><p>Real Madrid</p></td><td><p>4 - 1</p></td><td><p>Man City</p></td ></tr>
-                        <tr><td style="text-align: right"><p>Barcelona</p></td><td><p>2 - 0</p></td><td><p>AC Milan</p></td ></tr>
-                        <tr><td style="text-align: right"><p>Alterico Madrid</p></td><td><p>2 - 2</p></td><td><p>AS Roma</p></td ></tr>
-                        <tr><td style="text-align: right"><p>Lion</p></td><td><p>0 - 3</p></td><td><p>Inter</p></td ></tr>
-                        </table>
-                </div>
+                
+                
                 <br>
                 <div class="iPressSlide">
                   <!-- slider bootstrap -->
@@ -403,7 +392,6 @@
             
           </div>
         </div>
-      </div>
     </section>
     </div>
 </div>

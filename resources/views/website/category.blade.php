@@ -11,17 +11,17 @@
                     <div class="col-md-12 col-xs-12 high" style="padding-right: 8px;">
     <!-- post of the day  -->
                         <div class=" row">
-                        @foreach($catNews as $news)
+                        @foreach($catNews[0]->news as $news)
                         <div class="day_post col-md-12">
                             <div class="col-md-12 regtangle">
-                                <p>{{$news->title_en}}</p>
+                                <p>{{$catNews[0]->title_az}}</p>
                             </div>
                             <div class="col-md-12">
                                 <div class="row">
                                     <div class="col-md-6 col-sm-6 col-xs-12">
                                         <div class="row day_post_img ">
                                             <a href="#">
-                                                <img src="<?php echo 'images/news_img/'.$news->main_img ?>" alt="" >
+                                                <img src="<?php echo '/images/news_img/'.$news->main_img ?>" alt="" >
                                             </a>
                                            <!--  <div class="society"><p>Society</p></div> -->
                                         </div>

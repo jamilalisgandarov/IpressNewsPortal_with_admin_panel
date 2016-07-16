@@ -24,8 +24,8 @@ class HomePageController extends Controller
     }
     public function subcategory( $id){
 
-         $catNews=Subcategory::where('id',$id)->with('news')->get();
-        //  return $catNews=News::where('subcategory_id',$subcategory->id)->get();
+         $catNews=Subcategory::where('id',$id)->get();
+        //return $catNews=News::where('subcategory_id',$subcategory->id)->get();
         return view('website.category',compact('catNews'));
     }
 }

@@ -135,6 +135,7 @@
 			}
 		}
 		.small_text{
+			padding-right:0;
 			h5{
 				margin: 1.2% 0 1% 1%;
 				line-height: 140%;
@@ -409,10 +410,12 @@
 // the new pages style
 	
 	.news{
+
 		.card{
 			img{
-				max-width:100%;
+				width:100%;
 				max-height:100%;
+				margin-top: 10px;
 			}
 		}
 		.gallery{

@@ -85,7 +85,7 @@
                                         
                                         <div class="row text">
                                             <h3>
-                                                <a href="news/{{$subcategory->take(2)->last()->news->last()->id}}">{{str_limit($subcategory->take(2)->last()->news->last()->title_az,50)}}
+                                                <a href="/news/{{$subcategory->take(2)->last()->news->last()->id}}">{{str_limit($subcategory->take(2)->last()->news->last()->title_az,40)}}
                                                 </a>
                                             </h3>
                                             <p>3 hours ago / 0 comments</p>
@@ -94,20 +94,20 @@
                                     </div>
                                     
                                     <div class="col-md-6 col-sm-6 col-xs-12 small">
-                                        @for($i=0;$i<4;$i++)
+                                        @foreach($subcategory->take(2)->last()->news->take(4) as $news)
                                             <div class="row">
                                                 <div class="col-md-4 col-xs-4 small_img">
-                                                    <a href="#">
-                                                        <img src="http://www.themebin.com/wp-content/uploads/hd-wallpapers/1920x1200/modern_hd.jpg" alt="">
+                                                    <a href="/news/{{$news->id}}">
+                                                        <img src="<?php echo 'images/news_img/'.$news->main_img;?>">
                                                     </a>
                                                 </div>
                                                 <div class="col-md-8 col-xs-8 small_text">
                                                     <a href="#"> 
-                                                    <h5>A New Yorker doesn't necessarily come from</h5></a>
+                                                    <h5>{{str_limit($news->title_az,40)}}</h5></a>
                                                     <p>3 minutes ago /<a href=""> 0 comments</a></p>
                                                 </div>
                                             </div>
-                                        @endfor
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>
@@ -115,7 +115,7 @@
     <!-- caorusel posts -->
                         <div class="carousel_posts col-md-12">
                             <div class="col-md-12 regtangle">
-                                <p>Carousel Posts</p>
+                                <p>Yeni Xəbərlər</p>
                                     <div class="controller">
                                         
                                     </div>
@@ -158,7 +158,7 @@
                                         
                                         <div class="row text">
                                             <h3>
-                                                <a href="news/{{$subcategory->take(3)->last()->news->last()->id}}">{{str_limit($subcategory->take(3)->last()->news->last()->title_az,50)}}
+                                                <a href="/news/{{$subcategory->take(3)->last()->news->last()->id}}">{{str_limit($subcategory->take(3)->last()->news->last()->title_az,40)}}
                                                 </a>
                                             </h3>
                                             <p>3 hours ago / 0 comments</p>
@@ -167,20 +167,20 @@
                                     </div>
                                     
                                     <div class="col-md-6 col-sm-6 col-xs-12 small">
-                                        @for($i=0;$i<4;$i++)
+                                        @foreach($subcategory->take(3)->last()->news->take(4) as $news)
                                             <div class="row">
                                                 <div class="col-md-4 col-xs-4 small_img">
-                                                    <a href="#">
-                                                        <img src="http://www.themebin.com/wp-content/uploads/hd-wallpapers/1920x1200/modern_hd.jpg" alt="">
+                                                    <a href="/news/{{$news->id}}">
+                                                        <img src="<?php echo 'images/news_img/'.$news->main_img;?>">
                                                     </a>
                                                 </div>
                                                 <div class="col-md-8 col-xs-8 small_text">
                                                     <a href="#"> 
-                                                    <h5>A New Yorker doesn't necessarily come from</h5></a>
+                                                    <h5>{{str_limit($news->title_az,40)}}</h5></a>
                                                     <p>3 minutes ago /<a href=""> 0 comments</a></p>
                                                 </div>
                                             </div>
-                                        @endfor
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>
@@ -195,37 +195,36 @@
                                     
                                     <div class="col-md-6 col-sm-6 col-xs-12">
                                         <div class="row high_img_div">
-                                            <a href="news/{{$subcategory->take(2)->last()->news->last()->id}}">
+                                            <a href="news/{{$subcategory->take(1)->last()->news->last()->id}}">
                                                 <img src="<?php echo 'images/news_img/'.$subcategory->take(2)->last()->news->last()->main_img?>">
                                              </a>
                                         </div>
                                         
                                         <div class="row text">
                                             <h3>
-                                                <a href="news/{{$subcategory->take(2)->last()->news->last()->id}}">{{str_limit($subcategory->take(2)->last()->news->last()->title_az,50)}}
+                                                <a href="/news/{{$subcategory->take(1)->last()->news->last()->id}}">{{str_limit($subcategory->take(1)->last()->news->last()->title_az,40)}}
                                                 </a>
                                             </h3>
                                             <p>3 hours ago / 0 comments</p>
-                                            <p>{{str_limit($subcategory->take(2)->last()->news->last()->short_desc_az,100)}}</p>
+                                            <p>{{str_limit($subcategory->take(1)->last()->news->last()->short_desc_az,100)}}</p>
                                         </div>
                                     </div>
                                     
                                     <div class="col-md-6 col-sm-6 col-xs-12 small">
-                                        @for($i=0;$i<4;$i++)
+                                        @foreach($subcategory->take(1)->last()->news->take(4) as $news)
                                             <div class="row">
                                                 <div class="col-md-4 col-xs-4 small_img">
-                                                    <a href="#">
-                                                        <img src="http://www.themebin.com/wp-content/uploads/hd-wallpapers/1920x1200/modern_hd.jpg" alt="">
+                                                    <a href="/news/{{$news->id}}">
+                                                        <img src="<?php echo 'images/news_img/'.$news->main_img;?>">
                                                     </a>
                                                 </div>
                                                 <div class="col-md-8 col-xs-8 small_text">
-                                                    <a href="#"> 
-                                                        <h5>A New Yorker doesn't necessarily come from</h5>
-                                                    </a>
+                                                    <a href="/news/{{$news->id}}"> 
+                                                    <h5>{{str_limit($news->title_az,35)}}</h5></a>
                                                     <p>3 minutes ago /<a href=""> 0 comments</a></p>
                                                 </div>
                                             </div>
-                                        @endfor
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>
@@ -236,7 +235,7 @@
                     <div class="col-md-4 col-xs-12 small_slide">
                         <div class="video_widget">
                             <div class="col-md-12 regtangle">
-                                <p>Video Widget</p>
+                                <p>Video</p>
                             </div>
                             <div class="col-md-12 video_widget_iframe">
                                 <div class="row">
@@ -253,7 +252,7 @@
                         <div class="random_posts col-md-12">
                             <div class="row">
                                 <div class="col-md-12 regtangle">
-                                    <p>Random Posts</p>
+                                    <p>Ümumi xəbərlər</p>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="row">
@@ -271,8 +270,8 @@
                                         <div class="news_img_text">
                                             <img src="https://newevolutiondesigns.com/images/freebies/tropical-beach-background-8.jpg" alt="">
                                             <div class="news">
-                                                <p>Lifestyle Here's What insragram Ads will Look Like.
-                                                </p>
+                                                <a href="#"><p>Lifestyle Here's What insragram Ads will Look Like.
+                                                </p></a>
                                             </div>
                                         </div>
                                     </div>
@@ -282,8 +281,8 @@
                                         <div class="news_img_text">
                                             <img src="http://feelgrafix.com/data/wallpaper-hd/Wallpaper-HD-16.jpg" alt="">
                                             <div class="news">
-                                                <p>Lifestyle Here's What insragram Ads will Look Like.
-                                                </p>
+                                                <a href="#"><p>Lifestyle Here's What insragram Ads will Look Like.
+                                                </p></a>
                                             </div>
                                         </div>
                                     </div>
@@ -293,8 +292,8 @@
                                         <div class="news_img_text">
                                             <img src="http://mingecevir.org/wp-content/uploads/2016/02/99056624-70x70.jpg" alt="">
                                             <div class="news">
-                                                <p>Lifestyle Here's What insragram Ads will Look Like.
-                                                </p>
+                                                <a href="#"><p>Lifestyle Here's What insragram Ads will Look Like.
+                                                </p></a>
                                             </div>
                                         </div>
                                     </div>
@@ -305,7 +304,7 @@
                         <div class="popular_tags col-md-12">
                             <div class="row">
                                 <div class="col-md-12 regtangle">
-                                    <p>Popular Tags</p>
+                                    <p>Ən çox baxılanlar</p>
                                 </div>
                                 <div class="col-md-12 popular_tags_item">
                                     <div class="row">
@@ -314,39 +313,6 @@
                                             <p>{{$newsTag->keywords}}</p>
                                         </div>
                                     @endforeach
-                                        {{-- <div class="tag">
-                                            <p>Sports</p>
-                                        </div>
-                                        <div class="tag">
-                                            <p>Show business</p>
-                                        </div>
-                                        <div class="tag">
-                                            <p>worldpress themes</p>
-                                        </div>
-                                        <div class="tag">
-                                            <p>popular</p>
-                                        </div>
-                                        <div class="tag">
-                                            <p>tags</p>
-                                        </div>
-                                        <div class="tag">
-                                            <p>popular tags</p>
-                                        </div>
-                                        <div class="tag">
-                                            <p>world</p>
-                                        </div>
-                                        <div class="tag">
-                                            <p>popular tags</p> --}}
-                                     {{--    </div>
-                                        <div class="tag">
-                                            <p>popular tags</p>
-                                        </div>
-                                        <div class="tag">
-                                            <p>popular tags</p>
-                                        </div>
-                                        <div class="tag">
-                                            <p>popular tags</p>
-                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
@@ -355,7 +321,7 @@
                     <div class="fb_vidget col-md-12 col-xs-12">
                         <div class="row">
                             <div class="col-md-12 regtangle">
-                                    <p>Like Us</p>
+                                    <p>Bizi izləyin</p>
                             </div>
                             <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FLanguage-Camp-462197510643034%2F&tabs=timeline&width=340&height=200&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="100%" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
                         </div>

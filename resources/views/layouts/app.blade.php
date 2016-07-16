@@ -22,7 +22,7 @@
   <script src="//cdn.ckeditor.com/4.5.9/standard/ckeditor.js"></script>
   <!-- iCheck -->
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini sidebar-collapse">
 <div class="wrapper">
 
   <header class="main-header">

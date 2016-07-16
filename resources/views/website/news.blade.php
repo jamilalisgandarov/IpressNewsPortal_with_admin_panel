@@ -12,13 +12,11 @@
 					<div class="row">
 						<p class="pull-right">Yazar : {{$news->user->first_name." ".$news->user->last_name }}</p>
 						<p class="pull-left">Tarix : {{$news->updated_at}}</p>
-					
 					</div>
-					<hr class="row">
 				</div>
-				<h6 class="card-subtitle text-muted">{{$news->short_desc_az}}</h6>
 			</div>
 			<img src="<?php echo "/images/news_img/".$news->main_img ?>">
+			<hr>
 			<div class="card-block">
 				<p class="card-text">{!! $news->desc_az !!}</p>
 			</div>

@@ -22,10 +22,6 @@ $stumbleupon: #EB4823;
 $yahoo: #7B0099;
 $blogger: #fb8f3d;
 $soundcloud: #ff3a00;
-@font-face {
-    font-family: 'RobotoRegular';
-    src: url(../../fonts/roboto.regular.ttf);
-}
 
 body {
     overflow-x: hidden;
@@ -57,8 +53,7 @@ body {
 }
 
 #header-wrap {
-       font-family: 'Roboto', sans-serif;
-    
+    font-family: 'Roboto', sans-serif;
     .flexDisplay {
         display: flex;
         align-items: center;
@@ -66,7 +61,6 @@ body {
     .height {
         height: 47px;
     }
-
     /*Hot news , date and language selection section*/
     .topHeader {
         background-color: $colorDark;
@@ -89,7 +83,6 @@ body {
             p {
                 color: lightgray;
                 text-decoration: none;
-                font-family: "RobotoRegular";
             }
         }
         .live-cta {
@@ -101,7 +94,7 @@ body {
             position: relative;
             overflow: hidden;
             left: 15px;
-                font-family: 'Roboto', sans-serif !important;
+            font-family: 'Roboto', sans-serif !important;
             .newsOverlay {
                 position: absolute;
                 height: 100%;
@@ -213,7 +206,7 @@ body {
             color: lightgray;
             top: 7px;
             p {
-                font-family: "RobotoRegular";
+       
                 justify-content: center;
                 margin-top: 10px;
             }
@@ -262,7 +255,7 @@ body {
                 width: 100%;
                 position: relative;
                 z-index: 5;
-                div{
+                div {
                     display: flex;
                     justify-content: center;
                 }
@@ -348,7 +341,6 @@ body {
                 position: relative;
                 z-index: 1000;
             }
-     
             li {
                 background-color: $colorDark;
                 a {
@@ -365,15 +357,14 @@ body {
                     margin: 14px 40px;
                     position: relative;
                 }
-                .dropdown-menu{
-                    padding:0px 0px !important;
+                .dropdown-menu {
+                    padding: 0px 0px !important;
                 }
-                ul{  
-
-                    li{
+                ul {
+                    li {
                         height: auto !important;
-                        padding:0px !important;
-                        a{
+                        padding: 0px !important;
+                        a {
                             font-family: 'Roboto', sans-serif;
                             font-size: 14px;
                             padding: 12px 20px !important;
@@ -383,10 +374,9 @@ body {
                             z-index: 1000;
                             background-color: $colorDark;
                         }
-                        a:hover{
+                        a:hover {
                             background-color: $colorPink;
                         }
-
                     }
                     // li:hover{
                     //     background-color:$colorPink;
@@ -431,18 +421,33 @@ body {
                         }
                         .searchButton {
                             position: relative;
-                            padding: 9px 10px;
+                            padding: 9px 11px;
                             margin-bottom: 8px;
                             display: inline-block;
                             a {
-                                padding: 5px 10px !important;
+                                padding: 5px 3px !important;
                                 position: absolute;
                                 top: 3px !important;
-                                width: 40px;
+                                width: 18px;
                                 border-radius: 5px;
                                 background: #242527;
                                 height: 35px;
+                            }
+                            button {
+                                padding: 0px 6px !important;
+                                position: absolute;
+                                top: 3px !important;
+                                width: 32px;
+                                background: #242527;
+                                height: 30px;
                                 padding: 10px;
+                                border:none;
+                            }
+                            button:focus{
+                                box-shadow:none;
+                                outline: none;
+                                border:none;
+
                             }
                             i {
                                 font-size: 17px;
@@ -560,7 +565,7 @@ body {
 }
 
 #slider-wrap {
-    margin-bottom:30px;
+    margin-bottom: 30px;
     .sliderFrame {
         height: 380px;
         margin-top: 50px;
@@ -628,23 +633,26 @@ body {
     }
     .col-md-9 {
         padding: 0 !important;
-        .col-md-8 {
+        .sliderImgFull {
+            background: gray;
             height: 100%;
-            .sliderImgFull {
-                background: gray;
-                height: 100%;
+            width: 100%;
+            img {
+                object-fit: cover;
                 width: 100%;
-                img {
-                    max-width: 100%;
-                    max-height: 100%;
-                }
+                height: 100%;
             }
         }
     }
     div.category {
         position: absolute;
-        width: 100px;
+        // width: 100px;
+        padding: 0px 15px;
         bottom: 15px;
+        text-align: center;
+        line-height: 30px;
+        font-size: 15px;
+        color: white;
         left: 30px;
         height: 30px;
         background-color: #4a7ee8;

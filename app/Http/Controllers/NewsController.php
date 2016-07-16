@@ -32,7 +32,8 @@ class NewsController extends Controller
         
         'short_desc_az' => 'required',
         'title_az'   =>'required',
-        'desc_az' => 'required',
+        'desc_az'  => 'required',
+        'keywords' => 'required',
         ]);
 
         if($request->visibility =='on'){
@@ -45,7 +46,7 @@ class NewsController extends Controller
         if ($request->main_img!="") { 
             $fileName=$request->main_img->getClientOriginalName();
             $newName=time().'_'.$fileName;
-            $request->main_img->move('images/news_img/',$newName);
+            $request->main_img->move('/images/news_img/',$newName);
         }else{
             $newName='no_photo.jpg';
         }
@@ -84,6 +85,7 @@ class NewsController extends Controller
         'short_desc_az' => 'required',
         'title_az'   =>'required',
         'desc_az' => 'required',
+        'keywords' => 'required',
         ]);
 
         if($request->visibility=='on'){
@@ -95,7 +97,7 @@ class NewsController extends Controller
         if ($request->main_img!="") { 
             $fileName           =$request->main_img->getClientOriginalName();
             $newName            =time().'_'.$fileName;
-            $request->main_img->move('images/news_img/',$newName);
+            $request->main_img->move('/images/news_img/',$newName);
         }else{
             $newName            =$news->main_img;
         }
@@ -121,7 +123,7 @@ class NewsController extends Controller
     public function delete(News $news)
     {
         $news->delete();
-        \File::delete('images/news_img/'.$news->main_img);
+        \File::delete('/images/news_img/'.$news->main_img);
         return back();
         
     }

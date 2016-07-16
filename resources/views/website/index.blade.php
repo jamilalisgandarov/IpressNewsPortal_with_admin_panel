@@ -8,18 +8,24 @@
                 <div class="col-md-9">
                     <div class="container-fluid padding sliderFrame">
                         <div class="sliderImageFrame  padding ">
+                        <a>
                             <div class="sliderImgFull">
+                            
+                                <img src="" class="mainImg">
                                 <div class="category"></div>
-                                <div class="rating"></div>
+                        
+                            
                             </div>
+                            </a>
                         </div>
-                        <div class="sliderMain padding ">
+                        <div class=" sliderMain padding ">
                             <div class="sliderMainTrack">
                                 <div class="sliderTrack">
                                 @foreach(($newsAll->take(6)) as $slider)
                                 <div class="sliderNews noselect activeSlider triangle ">
-                                        <div class="col-md-12 sliderNewsTitle"><h4 class="sliderNewsTitleColored">{{$slider->title_az}}</h4></div>
-                                        <div class="col-md-12 sliderNewsText"><span>{{-- {{str_limit($slider->short_desc_az,50)}} --}}</span></div>
+                                    <div class="col-md-12 sliderNewsTitle" data-img="/images/news_img/{{$slider->main_img}}" data-url='/news/{{$slider->id}}' data-cat='{{$slider->subcategory->title_az}}'>
+                                        <h4 class="sliderNewsTitleColored">{{$slider->title_az}}</h4>
+                                    </div>
                                 </div>
                                 @endforeach
                                 </div>
@@ -52,16 +58,16 @@
                                 <div class="row">
                                     <div class="col-md-6 col-sm-6 col-xs-12">
                                         <div class="row day_post_img ">
-                                            <a href="news/{{$subcategory->first()->news->last()->id}}">
-                                                <img src="<?php echo 'images/news_img/'.$subcategory->first()->news->last()->main_img ?>">
+                                            <a href="/news/{{$subcategory->first()->news->last()->id}}">
+                                                <img src="<?php echo '/images/news_img/'.$subcategory->first()->news->last()->main_img ?>">
                                             </a>
                                            <!--  <div class="society"><p>Society</p></div> -->
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-sm-6 col-xs-12 day_post_text">
                                         <div>
-                                            <h3><a href="news/{{$subcategory->first()->news->last()->id}}">{{str_limit($subcategory->first()->news->last()->title_az,50)}}</a></h3>
-                                            <p>3 hours ago / 0 comments</p>
+                                            <h3><a href="/news/{{$subcategory->first()->news->last()->id}}">{{str_limit($subcategory->first()->news->last()->title_az,50)}}</a></h3>
+                                            <p><?php echo \Carbon\Carbon::createFromTimeStamp(strtotime($subcategory->first()->news->last()->updated_at))->diffForHumans() ?> / 0 comments</p>
                                             <p>{!! str_limit($subcategory->first()->news->last()->short_desc_az ,200) !!}</p>
                                         </div>
                                     </div>
@@ -78,8 +84,8 @@
                                     
                                     <div class="col-md-6 col-sm-6 col-xs-12">
                                         <div class="row high_img_div">
-                                            <a href="news/{{$subcategory->take(2)->last()->news->last()->id}}">
-                                                <img src="<?php echo 'images/news_img/'.$subcategory->take(2)->last()->news->last()->main_img?>">
+                                            <a href="/news/{{$subcategory->take(2)->last()->news->last()->id}}">
+                                                <img src="<?php echo '/images/news_img/'.$subcategory->take(2)->last()->news->last()->main_img?>">
                                              </a>
                                         </div>
                                         
@@ -88,7 +94,7 @@
                                                 <a href="/news/{{$subcategory->take(2)->last()->news->last()->id}}">{{str_limit($subcategory->take(2)->last()->news->last()->title_az,40)}}
                                                 </a>
                                             </h3>
-                                            <p>3 hours ago / 0 comments</p>
+                                            <p><?php echo \Carbon\Carbon::createFromTimeStamp(strtotime($subcategory->take(2)->last()->news->last()->updated_at))->diffForHumans() ?> / 0 comments</p>
                                             <p>{{str_limit($subcategory->take(2)->last()->news->last()->short_desc_az,100)}}</p>
                                         </div>
                                     </div>
@@ -98,13 +104,13 @@
                                             <div class="row">
                                                 <div class="col-md-4 col-xs-4 small_img">
                                                     <a href="/news/{{$news->id}}">
-                                                        <img src="<?php echo 'images/news_img/'.$news->main_img;?>">
+                                                        <img src="<?php echo '/images/news_img/'.$news->main_img;?>">
                                                     </a>
                                                 </div>
                                                 <div class="col-md-8 col-xs-8 small_text">
                                                     <a href="#"> 
                                                     <h5>{{str_limit($news->title_az,40)}}</h5></a>
-                                                    <p>3 minutes ago /<a href=""> 0 comments</a></p>
+                                                    <p><?php echo \Carbon\Carbon::createFromTimeStamp(strtotime($news->updated_at))->diffForHumans() ?> /<a href=""> 0 comments</a></p>
                                                 </div>
                                             </div>
                                         @endforeach
@@ -142,7 +148,7 @@
                             </div>
                         </div>
     <!-- the music -->
-                        <div class="lifestyle col-md-12">
+                        <div class="music col-md-12">
                             <div class="col-md-12 regtangle">
                                 <p>{{$subcategory->take(3)->last()->title_az}}</p>
                             </div>
@@ -151,8 +157,8 @@
                                     
                                     <div class="col-md-6 col-sm-6 col-xs-12">
                                         <div class="row high_img_div">
-                                            <a href="news/{{$subcategory->take(3)->last()->news->last()->id}}">
-                                                <img src="<?php echo 'images/news_img/'.$subcategory->take(2)->last()->news->last()->main_img?>">
+                                            <a href="/news/{{$subcategory->take(3)->last()->news->last()->id}}">
+                                                <img src="<?php echo '/images/news_img/'.$subcategory->take(2)->last()->news->last()->main_img?>">
                                              </a>
                                         </div>
                                         
@@ -161,7 +167,7 @@
                                                 <a href="/news/{{$subcategory->take(3)->last()->news->last()->id}}">{{str_limit($subcategory->take(3)->last()->news->last()->title_az,40)}}
                                                 </a>
                                             </h3>
-                                            <p>3 hours ago / 0 comments</p>
+                                            <p><?php echo \Carbon\Carbon::createFromTimeStamp(strtotime($subcategory->take(3)->last()->news->last()->updated_at))->diffForHumans() ?> / 0 comments</p>
                                             <p>{{str_limit($subcategory->take(3)->last()->news->last()->short_desc_az,100)}}</p>
                                         </div>
                                     </div>
@@ -171,13 +177,14 @@
                                             <div class="row">
                                                 <div class="col-md-4 col-xs-4 small_img">
                                                     <a href="/news/{{$news->id}}">
-                                                        <img src="<?php echo 'images/news_img/'.$news->main_img;?>">
+                                                        <img src="<?php echo '/images/news_img/'.$news->main_img;?>">
                                                     </a>
                                                 </div>
                                                 <div class="col-md-8 col-xs-8 small_text">
                                                     <a href="#"> 
-                                                    <h5>{{str_limit($news->title_az,40)}}</h5></a>
-                                                    <p>3 minutes ago /<a href=""> 0 comments</a></p>
+                                                        <h5>{{str_limit($news->title_az,40)}}</h5>
+                                                    </a>
+                                                    <p><?php echo \Carbon\Carbon::createFromTimeStamp(strtotime($news->updated_at))->diffForHumans() ?> /<a href=""> 0 comments</a></p>
                                                 </div>
                                             </div>
                                         @endforeach
@@ -186,7 +193,7 @@
                             </div>
                         </div>
     <!-- the world news -->
-                        <div class="lifestyle col-md-12">
+                        <div class="world_news col-md-12">
                             <div class="col-md-12 regtangle">
                                 <p>{{$subcategory->take(2)->last()->title_az}}</p>
                             </div>
@@ -195,8 +202,8 @@
                                     
                                     <div class="col-md-6 col-sm-6 col-xs-12">
                                         <div class="row high_img_div">
-                                            <a href="news/{{$subcategory->take(1)->last()->news->last()->id}}">
-                                                <img src="<?php echo 'images/news_img/'.$subcategory->take(2)->last()->news->last()->main_img?>">
+                                            <a href="/news/{{$subcategory->take(1)->last()->news->last()->id}}">
+                                                <img src="<?php echo '/images/news_img/'.$subcategory->take(1)->last()->news->last()->main_img?>">
                                              </a>
                                         </div>
                                         
@@ -205,7 +212,7 @@
                                                 <a href="/news/{{$subcategory->take(1)->last()->news->last()->id}}">{{str_limit($subcategory->take(1)->last()->news->last()->title_az,40)}}
                                                 </a>
                                             </h3>
-                                            <p>3 hours ago / 0 comments</p>
+                                            <p><?php echo \Carbon\Carbon::createFromTimeStamp(strtotime($subcategory->take(1)->last()->news->last()->updated_at))->diffForHumans() ?> / 0 comments</p>
                                             <p>{{str_limit($subcategory->take(1)->last()->news->last()->short_desc_az,100)}}</p>
                                         </div>
                                     </div>
@@ -215,13 +222,14 @@
                                             <div class="row">
                                                 <div class="col-md-4 col-xs-4 small_img">
                                                     <a href="/news/{{$news->id}}">
-                                                        <img src="<?php echo 'images/news_img/'.$news->main_img;?>">
+                                                        <img src="<?php echo '/images/news_img/'.$news->main_img;?>">
                                                     </a>
                                                 </div>
                                                 <div class="col-md-8 col-xs-8 small_text">
                                                     <a href="/news/{{$news->id}}"> 
-                                                    <h5>{{str_limit($news->title_az,35)}}</h5></a>
-                                                    <p>3 minutes ago /<a href=""> 0 comments</a></p>
+                                                        <h5>{{str_limit($news->title_az,35)}}</h5>
+                                                    </a>
+                                                    <p><?php echo \Carbon\Carbon::createFromTimeStamp(strtotime($news->updated_at))->diffForHumans() ?> /<a href=""> 0 comments</a></p>
                                                 </div>
                                             </div>
                                         @endforeach
@@ -254,50 +262,21 @@
                                 <div class="col-md-12 regtangle">
                                     <p>Ümumi xəbərlər</p>
                                 </div>
+                                @for($i=0;$i<4;$i++)
+                                <?php $rand=mt_rand(1,count($newsAll)-1);?>
                                 <div class="col-md-12">
                                     <div class="row">
                                         <div class="news_img_text">
-                                            <img src="http://discoveryazerbaijan.az/wp-content/uploads/2016/07/1420390564_baki_42cc6d1955f27336cfe0d90e4f68f0a8-70x70.jpg" alt="">
+                                            <img src="/images/news_img/{{$newsAll->get($rand)->main_img}}">
                                             <div class="news">
-                                                <a href="#"><p>Lifestyle Here's What insragram Ads will Look Like.
+                                                <a href="/news/{{$newsAll->get($rand)->id}}"><p>
+                                                    {{$newsAll->get($rand)->title_az}}
                                                 </p></a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-12">
-                                    <div class="row">
-                                        <div class="news_img_text">
-                                            <img src="https://newevolutiondesigns.com/images/freebies/tropical-beach-background-8.jpg" alt="">
-                                            <div class="news">
-                                                <a href="#"><p>Lifestyle Here's What insragram Ads will Look Like.
-                                                </p></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="row">
-                                        <div class="news_img_text">
-                                            <img src="http://feelgrafix.com/data/wallpaper-hd/Wallpaper-HD-16.jpg" alt="">
-                                            <div class="news">
-                                                <a href="#"><p>Lifestyle Here's What insragram Ads will Look Like.
-                                                </p></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="row">
-                                        <div class="news_img_text">
-                                            <img src="http://mingecevir.org/wp-content/uploads/2016/02/99056624-70x70.jpg" alt="">
-                                            <div class="news">
-                                                <a href="#"><p>Lifestyle Here's What insragram Ads will Look Like.
-                                                </p></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endfor              
                             </div>
                         </div>
     <!-- popular tags    -->

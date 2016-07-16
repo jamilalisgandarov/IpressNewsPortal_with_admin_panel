@@ -176,13 +176,11 @@
 	}
 	@include regtangle(red,1.1% 1%,5.1%,3%);
 		.day_post_img{
-			background:gray;
 			position:relative;
 			min-width:270px;
 			max-width: 100%;
 			height: 218px;
 			overflow: hidden;
-			position:relative;
 			a{
 				position:absolute;
 				width: 100%;
@@ -423,6 +421,24 @@
 			.regtangle{
 			}
 			.image{
+				@include img_size();
+			}
+		}
+	}
+	.category_news{
+		min-height:428px;
+		@include main_text();
+		@include regtangle(#34466b,1.1% 1%,5.1%,3%);
+		.category_news_img{
+			position:relative;
+			min-width:270px;
+			max-width: 100%;
+			height: 218px;
+			overflow: hidden;
+			a{
+				position:absolute;
+				width: 100%;
+				height: 100%;
 				@include img_size();
 			}
 		}

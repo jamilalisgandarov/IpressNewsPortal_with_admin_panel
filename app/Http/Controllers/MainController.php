@@ -11,6 +11,7 @@ use App\Http\Middleware\Authenticate;
 use App\Http\Middleware\EncryptCookies;
 use App\Http\Middleware\RedirectIfAuthenticated;
 use App\Http\Middleware\VerifyCsrfToken;
+use App\News;
 
 class MainController extends Controller
 {
@@ -39,6 +40,12 @@ class MainController extends Controller
     		  return view('adminPanel.requests')
               ->with(compact('authors'))
               ->with(compact('user'));         
+    }
+    function search(Request $request){
+        $searchKey=$request->search;
+        $result = News::where('desc_az', 'like', '%'.$searchKey.'%')
+                ->get();
+        return view('website.searchResults',compact('result'));
     }
 
     // Accepting author request

@@ -18,20 +18,11 @@
     <!-- Custom stylesheet -->
     <link rel="stylesheet" type="text/css" href="/assets/css/custom/style.css">
 
-
-    <link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.css">
-
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-
-    <!-- <link rel="stylesheet" type="text/css" href="assets/sass/partials/_footer.css"> -->
     <link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.min.css">
-       <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+      
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/assets/js/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="/assets/js/container.js"></script>
 </head>
 
 <body>
@@ -43,7 +34,7 @@
                 <div class="container">
                     <div class="row">
                         <div class=" col-md-6 height hotNewsMain col-xs-12 overflow flex ">
-                            <a href="#">
+                            <a href="/news/{{App\News::all()->last()->id}}">
                                 <div class="live-cta">
                                     <div class="live-icon">
                                         <div class="live-pulse-min"></div>
@@ -51,8 +42,9 @@
                                     </div>
                                 </div>
                                 <div class="hotNewsTextMain">
+
                                     <div class="newsOverlay"></div>
-                                    <p class="hotNewsText">{{App\News::first()->title_az}}</p>
+                                    <p class="hotNewsText">{{str_limit(App\News::all()->last()->title_az,60)}}</p>
                                 </div>
                             </a>
                         </div>
@@ -137,15 +129,22 @@
                                                 <ul class="nav navbar-nav navbar-right" style="margin:0px;">
                                                     <li>
                                                         <div class="mainSearch col-xs-12">
-                                                            <div class="searchMain">
-                                                                <div class="overlayInput"></div>
-                                                                <input type="search" placeholder="Search " name="search">
-                                                            </div>
-                                                            <div class="searchButton">
-                                                                <a href="">
-                                                                    <i class="fa fa-search" aria-hidden="true"></i>
-                                                                </a>
-                                                            </div>
+                                                            <form action="/news/search" method="post">
+                                                                <div class="searchMain">
+                                                                   
+                                                                    <div class="overlayInput"></div>
+                                                                    {{csrf_field()}}
+                                                                    <input type="search" placeholder="Search " name="search">
+                                                                       
+                                                                
+                                                                </div>
+                                                                <div class="searchButton">
+                                                                    <a>
+                                                                        <button class="fa fa-search" type="submit" name="submit" value=""></button>
+                                                                       
+                                                                    </a>
+                                                                </div>    
+                                                            </form>
                                                         </div>
                                                     </li>
                                                 </ul>
@@ -172,227 +171,128 @@
     </section>
     <!-- This section for Sabina -->
     <!-- This section for Sabina -->
-    <section id="sidebar-wrap" class="col-md-3 col-xs-12">
-              <div class="col-md-12 ">
-                <div class="row">
-                <div class="doublePort regtangle">
-                <p>What's Hot</p></div>
-                <div class="row">
-                                            <div class="col-md-4 col-xs-4 small_img">
-                                                <a href="#">
-                                                    <img src="assets/images/content/1.png" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="col-md-8 col-xs-8 small_text">
-                                                <a href="#"> 
-                                                <p>A New Yorker doesn't necessarily come from</p></a>
-                                                <p> 2 day ago<p><div class="back"><div class="reyt">9.45</div><i class="fa fa-star-o star" aria-hidden="true"></i></div>
-                                            </div>
-                                        </div>
-                                        <div class="line"></div>
-                                       <div class="row">
-                                            <div class="col-md-4 col-xs-4 small_img">
-                                                <a href="#">
-                                                    <img src="assets/images/content/1.png" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="col-md-8 col-xs-8 small_text">
-                                                <a href="#"> 
-                                                <p>A New Yorker doesn't necessarily come from</p></a>
-                                                <p> 2 day ago<p><div class="back"><div class="reyt">9.45</div><i class="fa fa-star-o star" aria-hidden="true"></i></div>
-                                            </div>
-                                        </div>
-                                        <div class="line"></div>
-                                       <div class="row">
-                                            <div class="col-md-4 col-xs-4 small_img">
-                                                <a href="#">
-                                                    <img src="assets/images/content/1.png" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="col-md-8 col-xs-8 small_text">
-                                                <a href="#"> 
-                                                <p>A New Yorker doesn't necessarily come from</p></a>
-                                                <p> 2 day ago<p><div class="back"><div class="reyt">9.45</div><i class="fa fa-star-o star" aria-hidden="true"></i></div>
-                                            </div>
-                                        </div>
-                                        <div class="line"></div>
-                                            
-                                        <div class="row">
-                                            <div class="col-md-4 col-xs-4 small_img">
-                                                <a href="#">
-                                                    <img src="assets/images/content/1.png" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="col-md-8 col-xs-8 small_text">
-                                                <a href="#"> 
-                                                <p>A New Yorker doesn't necessarily come from</p></a>
-                                                <p> 2 day ago<p><div class="back"><div class="reyt">9.45</div><i class="fa fa-star-o star" aria-hidden="true"></i></div>
-                                            </div>
-                                        </div>
-                                        <div class="line"></div>
-                                        <div class="row">
-                                            <div class="col-md-4 col-xs-4 small_img">
-                                                <a href="#">
-                                                    <img src="assets/images/content/1.png" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="col-md-8 col-xs-8 small_text">
-                                                <a href="#"> 
-                                                <p>A New Yorker doesn't necessarily come from</p></a>
-                                                <p> 2 day ago<p><div class="back"><div class="reyt">9.45</div><i class="fa fa-star-o star" aria-hidden="true"></i></div>
-                                            </div>
-                                        </div>
-                </div>
-              <div class="row" >
-              <br>
-                
-                
-                <br>
-                <div class="iPressSlide">
-                  <!-- slider bootstrap -->
-                    
-                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                      <!-- Indicators -->
-                      <ol class="carousel-indicators" >
-                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#myCarousel" data-slide-to="1"></li>
-                        <li data-target="#myCarousel" data-slide-to="2"></li>
-                        <li data-target="#myCarousel" data-slide-to="3"></li>
-                      </ol>
-                      <!-- Wrapper for slides -->
-                      <div class="carousel-inner" role="listbox">
-                        <div class="item active">
-                          <div id="newsOne"><span>iPress Tweets @iPress<hr>iPress Tweets @iPressjhgfjsdf jdhb djhdg jdhg djhg ajdhg jdhfv jdhfb djhcbg djhg jdhfg djhffg djahg jdh gjahdg jhdghdugh aoidhg ;adkhgadjhfadfh gldjgLorem ipsum dolor sit</span></div>
+<section id="sidebar-wrap" class="col-md-3 col-xs-12">
+    <div class="col-md-12 ">
+        <div class="row">
+            <div class="doublePort regtangle">
+                <p>{{App\Subcategory::all()->take(1)->last()->title_az}}</p>
+            </div>
+                @foreach(App\Subcategory::all()->take(1)->last()->news->take(5) as $news)
+                    <div class="row">
+                        <div class="col-md-4 col-xs-4 small_img">
+                            <a href="/news/{{$news->id}}">
+                                <img src="<?php echo '/images/news_img/'.$news->main_img;?>">
+                            </a>
                         </div>
-                        <div class="item">
-                          <div id="newsOne"><span>iPress Tweets @iPress<hr>iPress Tweets @iPressjhgfjsdf jdhb djhdg jdhg djhg ajdhg jdhfv jdhfb djhcbg djhg jdhfg djhffg djahg jdh gjahdg jhdghdugh aoidhg ;adkhgadjhfadfh gldjgLorem ipsum dolor sit</span></div>
+                        <div class="col-md-8 col-xs-8 small_text">
+                            <a href="/news/{{$news->id}}"> 
+                                <h5>{{str_limit($news->title_az,35)}}</h5>
+                            </a>
+                            <p><?php echo \Carbon\Carbon::createFromTimeStamp(strtotime($news->updated_at))->diffForHumans() ?> /<a href=""> 0 comments</a></p>
                         </div>
-                        
-                        <div class="item">
-                          <div id="newsOne"><span>iPress Tweets @iPress<hr>iPress Tweets @iPressjhgfjsdf jdhb djhdg jdhg djhg ajdhg jdhfv jdhfb djhcbg djhg jdhfg djhffg djahg jdh gjahdg jhdghdugh aoidhg ;adkhgadjhfadfh gldjgLorem ipsum dolor sit</span></div>
-                        </div>
-                        <div class="item">
-                          <div id="newsOne"><span>iPress Tweets @iPress<hr>iPress Tweets @iPressjhgfjsdf jdhb djhdg jdhg djhg ajdhg jdhfv jdhfb djhcbg djhg jdhfg djhffg djahg jdh gjahdg jhdghdugh aoidhg ;adkhgadjhfadfh gldjgLorem ipsum dolor sit</span></div>
-                        </div>
-                        
-                      </div>
-                      
                     </div>
-                  <!-- slider bootstrap -->
-                </div>
-              </div>
-              <div class="row">
-                 <br>
-                <div class="doublePort regtangle"><p>Polls</p></div>
-                <div class="radiusBtns">
-                  <h4 style="text-align: center"><p>How is my site</p></h4>
-                  <div class="radio">
-                    <label>
-                      <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                      Amazing
-                    </label>
-                  </div>
-                  <div class="radio">
-                    <label>
-                      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                      Good
-                    </label>
-                  </div>
-                  <div class="radio">
-                    <label>
-                      <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                      Can be inproved
-                    </label>
-                  </div>
-                  <div class="radio">
-                    <label>
-                      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                      Not comments
-                    </label>
-                    <br>
-                    <br>
-                    <button  type="button" class="btnHover btn btn-vote btn-sm">Vote</button>
-                    <button  type="button" class="btnHover btn btn-result btn-sm">View Result</button>
-                    <br>
-                  </div>
-                </div>
-              </div>
-                 <div class="row">
-                 <br>
-                  <div class="doublePort regtangle"><p>Reset Comments</p></div>
-                  
-                                        <div class="row">
-                                            <div class="col-md-4 col-xs-4 small_img">
-                                                <a href="#">
-                                                    <img src="http://www.intrawallpaper.com/static/images/hd-wallpaper-6_NLl9H49.jpg" alt="">
-                                                </a>
-                                            </div>
+                    <div class="line"></div>
+                @endforeach
 
-                                            <div class="col-md-8 col-xs-8 small_text">
-                                                <a href="#"> 
-                                                <h5>A New Yorker doesn't necessarily come from</h5></a>
-                                                <p>3 minutes ago /<a href=""> 0 comments</a></p>
-                                            </div>
-                                        </div>
-                                        <div class="line"></div>
-                                        <div class="row">
-                                            <div class="col-md-4 col-xs-4 small_img">
-                                                <a href="#">
-                                                    <img src="https://img1.goodfon.ru/wallpaper/big/1/ca/foto-makro-kartinka-zelenye.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="col-md-8 col-xs-8 small_text">
-                                                <a href="#"> 
-                                                    <h5>A New Yorker doesn't necessarily come from</h5>
-                                                </a>
-                                                <p>3 minutes ago /<a href=""> 0 comments</a></p>
-                                            </div>
-                                        </div>
-                                        <div class="line"></div>
-                                        <div class="row">
-                                            <div class="col-md-4 col-xs-4 small_img">
-                                                <a href="#">
-                                                    <img src="assets/images/content/1.png" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="col-md-8 col-xs-8 small_text">
-                                                <a href="#"> 
-                                                <h5>A New Yorker doesn't necessarily come from</h5></a>
-                                                <p>3 minutes ago /<a href=""> 0 comments</a></p>
-                                            </div>
-                                        </div>
-                                        <div class="line"></div>
-                                        <div class="row">
-                                            <div class="col-md-4 col-xs-4 small_img">
-                                                <a href="#">
-                                                    <img src="assets/images/content/1.png" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="col-md-8 col-xs-8 small_text">
-                                                <a href="#"> 
-                                                <p>Alex</p></a>
-                                                <span>Welcome is WordPress</span> <a href=""><p> this is your first co...<p></a>
-                                            </div>
-                                        </div>
-                                        <div class="line"></div>
-                                        <div class="row">
-                                            <div class="col-md-4 col-xs-4 small_img">
-                                                <a href="#">
-                                                    <img src="assets/images/content/1.png" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="col-md-8 col-xs-8 small_text">
-                                                <a href="#"> 
-                                                <p>Alex</p></a>
-                                                <span>Welcome is WordPress</span> <a href=""><p> this is your first co...<p></a>
-                                            </div>
-                                        </div>
-                  
-              
-            
-          </div>
-        </div>
-    </section>
+                
+                <div class="" >
+                    <br>
+                    <br>
+                    <div class="iPressSlide">
+                        <!-- slider bootstrap -->
+                        
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators" >
+                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#myCarousel" data-slide-to="1"></li>
+                                <li data-target="#myCarousel" data-slide-to="2"></li>
+                                <li data-target="#myCarousel" data-slide-to="3"></li>
+                            </ol>
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item active">
+                                    <div id="newsOne"><span>iPress Tweets @iPress<hr>iPress Tweets @iPressjhgfjsdf jdhb djhdg jdhg djhg ajdhg jdhfv jdhfb djhcbg djhg jdhfg djhffg djahg jdh gjahdg jhdghdugh aoidhg ;adkhgadjhfadfh gldjgLorem ipsum dolor sit</span></div>
+                                </div>
+                                <div class="item">
+                                    <div id="newsOne"><span>iPress Tweets @iPress<hr>iPress Tweets @iPressjhgfjsdf jdhb djhdg jdhg djhg ajdhg jdhfv jdhfb djhcbg djhg jdhfg djhffg djahg jdh gjahdg jhdghdugh aoidhg ;adkhgadjhfadfh gldjgLorem ipsum dolor sit</span></div>
+                                </div>
+                                
+                                <div class="item">
+                                    <div id="newsOne"><span>iPress Tweets @iPress<hr>iPress Tweets @iPressjhgfjsdf jdhb djhdg jdhg djhg ajdhg jdhfv jdhfb djhcbg djhg jdhfg djhffg djahg jdh gjahdg jhdghdugh aoidhg ;adkhgadjhfadfh gldjgLorem ipsum dolor sit</span></div>
+                                </div>
+                                <div class="item">
+                                    <div id="newsOne"><span>iPress Tweets @iPress<hr>iPress Tweets @iPressjhgfjsdf jdhb djhdg jdhg djhg ajdhg jdhfv jdhfb djhcbg djhg jdhfg djhffg djahg jdh gjahdg jhdghdugh aoidhg ;adkhgadjhfadfh gldjgLorem ipsum dolor sit</span></div>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                                        <!-- slider bootstrap -->
+                    </div>
+                </div>
+                <div class="">
+                    <br>
+                    <div class="doublePort regtangle"><p>Polls</p></div>
+                    <div class="radiusBtns">
+                        <h4 style="text-align: center"><p>How is my site</p></h4>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                Amazing
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                Good
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                Can be inproved
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                Not comments
+                            </label>
+                            <br>
+                            <br>
+                            <button  type="button" class="btnHover btn btn-vote btn-sm">Vote</button>
+                            <button  type="button" class="btnHover btn btn-result btn-sm">View Result</button>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <br>
+                    <div class="doublePort regtangle">
+                        <p>{{App\Subcategory::all()->take(1)->last()->title_az}}</p>
+                    </div>
+                    
+                    @foreach(App\Subcategory::all()->take(1)->last()->news->take(4) as $news)
+                    <div class="row">
+                        <div class="col-md-4 col-xs-4 small_img">
+                            <a href="/news/{{$news->id}}">
+                                <img src="<?php echo '/images/news_img/'.$news->main_img;?>">
+                            </a>
+                        </div>
+                        <div class="col-md-8 col-xs-8 small_text">
+                            <a href="/news/{{$news->id}}"> 
+                                <h5>{{str_limit($news->title_az,35)}}</h5>
+                            </a>
+                            <p><?php echo \Carbon\Carbon::createFromTimeStamp(strtotime($news->updated_at))->diffForHumans() ?> /<a href=""> 0 comments</a></p>
+                        </div>
+                    </div>
+                    <div class="line"></div>
+                @endforeach
+                       
+                </div>
+            </div>
+        </section>
     </div>
 </div>
 
@@ -411,7 +311,7 @@
                             <div class=" info col-md-12">
                                 <p>iPress is a  magazine Wordpress Theme. Nunc montes odio phasellus dignissim, aenean, nec augue velit integer elementum ut montes quis integer cursus, est purus, lectus duis, scelerisque tincidunt ultricies phasellus elementum turpis tristique.
                                 <br><br>
-                                Email:<span class="info_email">information@ipress.com</span></p>
+                                Email:<span class="info_email">codeacademy@gmail.com</span></p>
                             </div>                         
                         </div>
                     </div>
@@ -427,30 +327,11 @@
                                     <div class="imgM pull-left"><a href="/news/{{$news->id}}"><img src="<?php echo '/images/news_img/'.$news->main_img ?>"></a></div>
                                 </div>
                                 <div class="col-xs-6 col-md-8">
-                                    <p class="small_text">{{$news->title_az}}</p>
+                                    <p class="small_text"><a href="/news/{{$news->id}}">{{str_limit($news->title_az,30)}}</a></p>
                                     <p class="last_update">{{Carbon\Carbon::createFromTimeStamp(strtotime($news->created_at))->diffForHumans()}}</p>
                                 </div>
                             </div>
                             @endforeach
-
-                          {{--    <div class="small_div col-md-12">
-                                <div class="small_img col-md-4">
-                                    <div class="imgM pull-left"><a href="#"><img src="assets/images/footer/roma.jpg"></a></div>
-                                </div>
-                                <div class="col-xs-7 col-md-8">
-                                    <p class="small_text">Can you guess the most 'overpaid' actor?</p>
-                                    <p class="last_update">1 days ago</p>
-                                </div>
-                            </div>
-                             <div class="small_div col-md-12">
-                                <div class="small_img col-md-4">
-                                    <div class="imgM pull-left"><a href="#"><img src="assets/images/footer/roma.jpg"></a></div>
-                                </div>
-                                <div class="col-xs-7 col-md-8">
-                                    <p class="small_text">A New Yorker doesn't necessarily come from...</p>
-                                    <p class="last_update">15 days ago</p>
-                                </div>
-                            </div> --}}
                         </div>
                     </div>
                     <!---->
@@ -465,7 +346,7 @@
                                     <div class="imgM pull-left"><a href="/news/{{$news->id}}"> <img src="<?php echo '/images/news_img/'.$news->main_img ?>"></a></div>
                                 </div>
                                 <div class="col-xs-8 col-md-8">
-                                    <p class="small_text">{{$news->title_az}}</p>
+                                    <p class="small_text"><a href="/news/{{$news->id}}">{{$news->title_az}}</a></p>
                                     <div class="info_reviews row">
                                         <div class="reviews_rate pull-left col-md-1">
                                             <i class="fa fa-star-o" aria-hidden="true"><p>9.25</p></i>
@@ -475,36 +356,6 @@
                                 </div>
                             </div>
                             @endforeach
-                            <!--first Best div end-->
-                          {{--   <div class="small_div col-md-12">
-                                <div class="small_img col-md-4">
-                                    <div class="imgM pull-left"><a href="#"><img src="assets/images/footer/roma.jpg"></a></div>
-                                </div>
-                                <div class="col-xs-8 col-md-8">
-                                    <p class="small_text">Can you guess the most 'overpaid' actor?</p>
-                                    <div class="info_reviews row">
-                                        <div class="reviews_rate pull-left col-md-1">
-                                            <i class="fa fa-star-o" aria-hidden="true"><p>8</p></i>
-                                        </div> 
-                                        <div class="reviews_category pull-left blue_bg"><a href="#"><p>Entertainment</p></a></div>
-                                    </div>
-                                </div>
-                            </div> --}}
-                          {{--   <div class="small_div col-md-12">
-                                <div class="small_img col-md-4">
-                                    <div class="imgM pull-left"><a href="#"><img src="assets/images/footer/roma.jpg"></a></div>
-                                </div>
-                                <div class="col-xs-8 col-md-8">
-                                    <p class="small_text">A New Yorker doesn't necessarily come from...</p>
-                                    <div class="info_reviews row">
-                                        <div class="reviews_rate pull-left col-md-1">
-                                            <i class="fa fa-star-o" aria-hidden="true"><p>7.34</p></i>
-                                        </div> 
-                                        <div class="reviews_category pull-left green_bg"><a href="#"><p>People</p></a></div>
-                                    </div>
-                                </div>
-                            </div> --}}
-                            <!--last best div end-->
                             </div>
                     </div>
                     <div class="newsletters same  one1 col-md-3">
@@ -523,7 +374,7 @@
                                 <!--  <div class="latest_mail_info_done"></div> -->
                             </div>
                             <div class=" same_top regtangle col-md-12">
-                                 <h4>Connect with Us</h4>
+                                 <h4>Bizimlə əlaqə</h4>
                             </div>
                             <div class="social_n col-md-12">
                                 <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
@@ -539,21 +390,19 @@
                         </div>
                         <!-- newlest div end -->
                         <div class="copyright col-md-12">
-                            <p class="copyrightText">© Powered By Wordpress.  Designed by Theme20.com</p>
-                            <h5 class="take_me_top">Back to top  <i class="fa fa-arrow-circle-o-up" aria-hidden="true"></i></h5>
+                            <p class="copyrightText">© Powered By CodeAcademy team.</p>
+                            <h5 class="take_me_top">Əvvələ qayıt<i class="fa fa-arrow-circle-o-up" aria-hidden="true"></i></h5>
                         </div>
                     </div>
                    
                 </div> 
             </div>
     </section>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="/assets/js/jquery-1.12.4.js"></script>
+
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="/assets/js/main.js"></script>
     <script src="/assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/assets/js/header.js"></script>
-    <script type="text/javascript" src="/assets/js/container.js"></script>
+    <script src="/assets/js/main.js"></script>   
     <script type="text/javascript" src="/assets/js/footer.js"></script>
     <script type="text/javascript" src="/assets/js/miniSlider.js"></script>
     <script src="/assets/js/slick.js"></script>

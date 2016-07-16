@@ -119,6 +119,10 @@ jQuery(document).ready(function($) {
     }
     activated();
     $activatedslider = 0;
+        $('.category').empty();
+    $('.mainImg').attr('src', $('.triangle').children('.sliderNewsTitle').attr('data-img'));
+    $('.mainImg ').parent('div').parent('a').attr('href', $('.triangle').children('.sliderNewsTitle').attr('data-url'));
+    $('.category').append($('.triangle').children('.sliderNewsTitle').attr('data-cat'));
 
     function activeSlider() {
         $activatedslider++;
@@ -129,7 +133,11 @@ jQuery(document).ready(function($) {
         $('.sliderNews h4').removeClass('sliderNewsTitleColored')
         $('.sliderNews').removeClass('activeSlider');
         $('.sliderNews').eq($activatedslider).addClass('triangle');
-        $('sliderNews').eq($activatedslider).css('background', '#242527');
+        $('.sliderNews').eq($activatedslider).css('background', '#242527');
+        $('.mainImg').attr('src', $('.triangle').children('.sliderNewsTitle').attr('data-img'));
+        $('.category').empty();
+        $('.category').append($('.triangle').children('.sliderNewsTitle').attr('data-cat'));
+        $('.mainImg ').parent('div').parent('a').attr('href', $('.triangle').children('.sliderNewsTitle').attr('data-url'));
         if ($('.sliderNews').length - 1 == $activatedslider) {
             $activatedslider = 0;
         }
@@ -143,7 +151,11 @@ jQuery(document).ready(function($) {
         $('.sliderNews h4').removeClass('sliderNewsTitleColored')
         $('.sliderNews').removeClass('activeSlider');
         $(this).addClass('triangle');
+        $('.category').empty();
+        $('.mainImg').attr('src', $('.triangle').children('.sliderNewsTitle').attr('data-img'));
+        $('.mainImg ').parent('div').parent('a').attr('href', $('.triangle').children('.sliderNewsTitle').attr('data-url'));
         $(this).css('background', '#242527');
+        $('.category').append($('.triangle').children('.sliderNewsTitle').attr('data-cat'));
     });
 
     //Search input hover effect
@@ -170,10 +182,28 @@ jQuery(document).ready(function($) {
         }
         $langOn++;
     });
+    $(window).resize(function(event) {
+        if($(this).width()>1000){       
     $('.dropdown').hover(function() {
        $(this).children('ul.dropdown-menu').css('display', 'block');
     }, function() {
      $(this).children('ul.dropdown-menu').css('display', 'none');
     });
+        }
+        else{
+        $('.dropdown').off('hover','**');
+    }
+       
+    });
+    if($(this).width()>1000){       
+    $('.dropdown').hover(function() {
+       $(this).children('ul.dropdown-menu').css('display', 'block');
+    }, function() {
+     $(this).children('ul.dropdown-menu').css('display', 'none');
+    });
+        }
+    else{
+        $('.dropdown').off('hover');
+    }
  });
 

@@ -3,7 +3,7 @@
 
 @section('content')
 <div style="padding-left:40px; padding-right:40px; min-height:500px">
-<form method="post" action="/store/{{$catId->id}}/subcategory">
+<form method="post" action="/admin/store/{{$catId->id}}/subcategory">
 
 	<input type="hidden" name="_token" value="{{ csrf_token() }}">
   {{-- <input type="hidden" name="category_id" value={{$catId->id}}> --}}

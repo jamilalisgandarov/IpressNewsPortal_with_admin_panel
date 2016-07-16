@@ -12,8 +12,9 @@ class HomePageController extends Controller
 {
     public function index()
     {
-    	$newsAll =News::all();
-    	return view('website.index',compact('newsAll'));
+    	$newsAll    =News::all();
+        $subcategory=Subcategory::aLL();
+    	return view('website.index',compact('newsAll','subcategory'));
     	
     }
     public function show(News $news)

@@ -30,7 +30,7 @@
 					<td>{{$news->updated_at}}</td>
 					<td>
 						@if(\Auth::user()->status==0||\Auth::user()->id==$news->user_id)
-						<a href="/news/{{$news->id}}/edit">
+						<a href="/admin/news/{{$news->id}}/edit">
 							<button type="button" class="btn btn-default" id='#newsModal' aria-label="Left Align">
 								<span class="" aria-hidden="true">Edit</span>
 							</button>
@@ -95,7 +95,7 @@
               <span>     Do you want to delete: <span class="newsData"></span>  ? </span>
             </div>
             <div class="modal-footer">
-              <a  href='/news/{{$news->id}}/delete'>
+              <a  href='/admin/news/{{$news->id}}/delete'>
                 <button type="button" class="btn btn-danger">Delete</button>
               </a>
               <button type="button" class="btn btn-primary"  data-dismiss="modal">Back</button>

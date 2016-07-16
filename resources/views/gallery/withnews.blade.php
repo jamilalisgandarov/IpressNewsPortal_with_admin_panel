@@ -23,7 +23,7 @@
 					<td>{{$news->title_az}}</td>
 					<td>
 						@if(\Auth::user()->status==0||\Auth::user()->id==$news->user_id)
-							<a href="/{{$news->id}}/add/photo">
+							<a href="/admin/{{$news->id}}/add/photo">
 								<button type="button" class="btn btn-default" aria-label="Left Align">
 									<span class="" aria-hidden="true">Add New Photo</span>
 								</button>
@@ -35,7 +35,7 @@
 						@endif
 					</td>
 					<td>
-						<a href="/{{$news->id}}/gallery">
+						<a href="/admin/{{$news->id}}/gallery">
 							<button type="button" class="btn btn-default" aria-label="Left Align">
 								<span class="" aria-hidden="true">All Photos</span>
 							</button>

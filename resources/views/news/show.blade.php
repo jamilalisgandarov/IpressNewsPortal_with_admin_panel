@@ -3,13 +3,7 @@
 @section('content')
 
     <div class="container">
-    	<div class="">
-    		<ul class="nav nav-tabs">
-			  	<li role="presentation" class="active"><a href="{{'/'}}">Home</a></li>
-			  	<li role="presentation"><a href="/news/add">Add News</a></li>
-			</ul>
-			<hr>
-    	</div>
+
 	    <div class="">
     		<table class="table table-striped">
 	    		<thead>
@@ -36,14 +30,14 @@
 		    				<td>{{$news[$i]->updated_at}}</td>
 
 		    				<td>
-		    					<a href="/news/{{$news[$i]->id}}/edit">
+		    					<a href="/admin/news/{{$news[$i]->id}}/edit">
 			    					<button type="button" class="btn btn-default" aria-label="Left Align">
 			    						<span class="" aria-hidden="true">Edit</span>
 			    					</button>
 			    				</a>
 		    				</td>
 		    				<td>
-		    					<a href="/news/{{$news[$i]->id}}/delete">
+		    					<a href="/admin/news/{{$news[$i]->id}}/delete">
 		    						<button type="button" class="btn btn-default" aria-label="Left Align" >
 		    							<span class="" aria-hidden="true">Delete</span>
 		    						</button>

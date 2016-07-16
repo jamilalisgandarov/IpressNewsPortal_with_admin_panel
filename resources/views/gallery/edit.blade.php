@@ -8,7 +8,7 @@
         <div class="col-md-12">
             <img style='max-width:100%;max-height: 400px;'  src="<?php echo "/images/gallery_img/lg_img/$gallery->path_large" ?>">
         </div>
-        <form method="POST" action="/gallery/{{$gallery->news_id}}/{{$gallery->id}}/update" enctype="multipart/form-data" accept-charset="UTF-8">
+        <form method="POST" action="/admin/gallery/{{$gallery->news_id}}/{{$gallery->id}}/update" enctype="multipart/form-data" accept-charset="UTF-8">
              {{ method_field('patch') }}
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="form-group">

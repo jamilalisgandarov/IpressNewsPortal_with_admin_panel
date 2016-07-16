@@ -33,7 +33,7 @@ class CategoriesController extends Controller
 		'title_ru'=>'required'
 		]);
 		Category::create($request->all());
-		return redirect('/category');
+		return redirect('/admin/category');
 
 
 	}
@@ -49,13 +49,13 @@ class CategoriesController extends Controller
 	{
 
 		$catId->update($request->all());
-		return redirect('/category');
+		return redirect('/admin/category');
 
 
 	}
 	public function destroy(Category $catId)
 	{
 		$catId->delete();
-		return redirect('/category');
+		return redirect('/admin/category');
 	}
 }

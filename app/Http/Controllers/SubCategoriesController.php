@@ -44,7 +44,7 @@ class SubCategoriesController extends Controller
             $sub=new SubCategory;
             $sub->category_id=$catId->id;            
             $catId->subcategories()->create($request->all());
-            return redirect('/category/'.$catId->id);
+            return redirect('/admin/category/'.$catId->id);
                    
     }
     public function show($id){}
@@ -62,7 +62,7 @@ class SubCategoriesController extends Controller
           
             
         $catId->update($request->all());
-       return redirect('/category/'.$catId->category_id);
+       return redirect('/admin/category/'.$catId->category_id);
                    
     }
 

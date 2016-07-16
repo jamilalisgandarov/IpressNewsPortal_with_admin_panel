@@ -59,33 +59,4 @@
 	<hr>
 </div>
 
-<a class="fancybox-thumb" rel="fancybox-thumb" href="http://farm6.staticflickr.com/5612/15344856989_449794889d_b.jpg" title="Morning Twilight (Jose Hamra Images)">
-	<img src="http://farm6.staticflickr.com/5612/15344856989_449794889d_m.jpg" alt="" />
-</a>
-<a class="fancybox-thumb" rel="fancybox-thumb" href="http://farm8.staticflickr.com/7289/16207238089_0124105172_b.jpg" title="(Eric Goncalves (cathing up again!))">
-	<img src="http://farm8.staticflickr.com/7289/16207238089_0124105172_m.jpg" alt="" />
-</a>
-<a class="fancybox-thumb" rel="fancybox-thumb" href="http://farm9.staticflickr.com/8568/16388772452_f4d77a92c7_b.jpg" title="Arctic Paradise (Tom Draxler)">
-	<img src="http://farm9.staticflickr.com/8568/16388772452_f4d77a92c7_m.jpg" alt="" />
-</a>
-<a class="fancybox-thumb" rel="fancybox-thumb" href="http://farm8.staticflickr.com/7308/15783866983_27160395b9_b.jpg" title="Rodeo Dusk (_JonathanMitchellPhotography_)">
-	<img src="http://farm8.staticflickr.com/7308/15783866983_27160395b9_m.jpg" alt="" />
-</a>
-
-
 @endsection
-$(document).ready(function() {
-	$(".fancybox-thumb").fancybox({
-		prevEffect	: 'none',
-		nextEffect	: 'none',
-		helpers	: {
-			title	: {
-				type: 'outside'
-			},
-			thumbs	: {
-				width	: 50,
-				height	: 50
-			}
-		}
-	});
-});

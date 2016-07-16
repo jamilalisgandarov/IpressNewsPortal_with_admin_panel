@@ -13,7 +13,7 @@
                                 <div class="rating"></div>
                             </div>
                         </div>
-                        <div class=" sliderMain padding ">
+                        <div class="sliderMain padding ">
                             <div class="sliderMainTrack">
                                 <div class="sliderTrack">
                                 @foreach(($newsAll->take(6)) as $slider)
@@ -43,25 +43,26 @@
                     <div class="col-md-8 col-xs-12 high" style="padding-right: 8px;">
     <!-- post of the day  -->
                         <div class=" row">
+
                         <div class="day_post col-md-12">
                             <div class="col-md-12 regtangle">
-                                <p>Post of the day</p>
+                                <p>{{$subcategory->first()->title_az}}</p>
                             </div>
                             <div class="col-md-12">
                                 <div class="row">
                                     <div class="col-md-6 col-sm-6 col-xs-12">
                                         <div class="row day_post_img ">
-                                            <a href="news/{{$newsAll->first()->id}}">
-                                                <img src="<?php echo 'images/news_img/'.$newsAll->first()->main_img ?>" alt="" >
+                                            <a href="news/{{$subcategory->first()->news->last()->id}}">
+                                                <img src="<?php echo 'images/news_img/'.$subcategory->first()->news->last()->main_img ?>">
                                             </a>
                                            <!--  <div class="society"><p>Society</p></div> -->
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-sm-6 col-xs-12 day_post_text">
                                         <div>
-                                            <h3><a href="news/{{$newsAll->first()->id}}">{{str_limit($newsAll->first()->title_az,50)}}</a></h3>
+                                            <h3><a href="news/{{$subcategory->first()->news->last()->id}}">{{str_limit($subcategory->first()->news->last()->title_az,50)}}</a></h3>
                                             <p>3 hours ago / 0 comments</p>
-                                            <p>{!! str_limit($newsAll->first()->short_desc_az ,200) !!}</p>
+                                            <p>{!! str_limit($subcategory->first()->news->last()->short_desc_az ,200) !!}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -70,71 +71,43 @@
     <!--     lifestyle -->
                         <div class="lifestyle col-md-12">
                             <div class="col-md-12 regtangle">
-                                <p>Lifestyle</p>
+                                <p>{{$subcategory->take(2)->last()->title_az}}</p>
                             </div>
                             <div class="col-md-12">
                                 <div class="row">
+                                    
                                     <div class="col-md-6 col-sm-6 col-xs-12">
                                         <div class="row high_img_div">
-                                            <a href="#">
-                                                <img src="https://wallpaperscraft.com/image/sunset_mountain_lake_landscape_86139_1920x1080.jpg" alt="">
+                                            <a href="news/{{$subcategory->take(2)->last()->news->last()->id}}">
+                                                <img src="<?php echo 'images/news_img/'.$subcategory->take(2)->last()->news->last()->main_img?>">
                                              </a>
                                         </div>
+                                        
                                         <div class="row text">
-                                            <h3>{{str_limit($newsAll->first()->title_az,20)}}</h3>
+                                            <h3>
+                                                <a href="news/{{$subcategory->take(2)->last()->news->last()->id}}">{{str_limit($subcategory->take(2)->last()->news->last()->title_az,50)}}
+                                                </a>
+                                            </h3>
                                             <p>3 hours ago / 0 comments</p>
-                                            <p>{!! str_limit($newsAll->first()->short_desc_az ,100)!!}</p>
+                                            <p>{{str_limit($subcategory->take(2)->last()->news->last()->short_desc_az,100)}}</p>
                                         </div>
                                     </div>
+                                    
                                     <div class="col-md-6 col-sm-6 col-xs-12 small">
-                                        <div class="row">
-                                            <div class="col-md-4 col-xs-4 small_img">
-                                                <a href="#">
-                                                    <img src="http://www.themebin.com/wp-content/uploads/hd-wallpapers/1920x1200/modern_hd.jpg" alt="">
-                                                </a>
+                                        @for($i=0;$i<4;$i++)
+                                            <div class="row">
+                                                <div class="col-md-4 col-xs-4 small_img">
+                                                    <a href="#">
+                                                        <img src="http://www.themebin.com/wp-content/uploads/hd-wallpapers/1920x1200/modern_hd.jpg" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-8 col-xs-8 small_text">
+                                                    <a href="#"> 
+                                                    <h5>A New Yorker doesn't necessarily come from</h5></a>
+                                                    <p>3 minutes ago /<a href=""> 0 comments</a></p>
+                                                </div>
                                             </div>
-                                            <div class="col-md-8 col-xs-8 small_text">
-                                                <a href="#"> 
-                                                <h5>A New Yorker doesn't necessarily come from</h5></a>
-                                                <p>3 minutes ago /<a href=""> 0 comments</a></p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-4 col-xs-4 small_img">
-                                                <a href="#">
-                                                    <img src="assets/images/content/1.png" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="col-md-8 col-xs-8 small_text">
-                                                <a href="#"> 
-                                                <h5>A New Yorker doesn't necessarily come from</h5></a>
-                                                <p>3 minutes ago /<a href=""> 0 comments</a></p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-4 col-xs-4 small_img">
-                                                <a href="#">
-                                                    <img src="http://www.intrawallpaper.com/static/images/dream_village_hd-HD_Zl7opxD.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="col-md-8 col-xs-8 small_text">
-                                                <a href="#"> 
-                                                <h5>A New Yorker doesn't necessarily come from</h5></a>
-                                                <p>3 minutes ago /<a href=""> 0 comments</a></p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-4 col-xs-4 small_img">
-                                                <a href="#">
-                                                    <img src="assets/images/content/1.png" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="col-md-8 col-xs-8 small_text">
-                                                <a href="#"> 
-                                                <h5>A New Yorker doesn't necessarily come from</h5></a>
-                                                <p>3 minutes ago /<a href=""> 0 comments</a></p>
-                                            </div>
-                                        </div>
+                                        @endfor
                                     </div>
                                 </div>
                             </div>
@@ -152,41 +125,11 @@
                                     <div class="carousel_move" id="carousel_move" draggable="true">
                                     @foreach(($newsAll->take(10)) as $slider)
                                         <div class="carousel_item">
-                                            <a href="#">
+                                            <a href="/news/{{$slider->id}}">
                                                 <img src="<?php echo '/images/news_img/'.$slider->main_img ?>">
                                             </a>
                                         </div>
                                         @endforeach
-                                       {{--  <div class="carousel_item">
-                                            <a href="#">
-                                                <img src="http://www.themebin.com/wp-content/uploads/hd-wallpapers/1920x1200/modern_hd.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="carousel_item"> --}}
-                                      {{--       <a href="#">
-                                                <img src="assets/images/content/1.png" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="carousel_item">
-                                            <a href="#">
-                                           --}} {{--      <img src="http://www.themebin.com/wp-content/uploads/hd-wallpapers/1920x1200/modern_hd.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="carousel_item">
-                                            <a href="#">
-                                                <img src="assets/images/content/1.png" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="carousel_item">
-                                            <a href="#">
-                                                <img src="http://www.intrawallpaper.com/static/images/dream_village_hd-HD_Zl7opxD.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="carousel_item">
-                                            <a href="#">
-                                                <img src="assets/images/content/1.png" alt="">
-                                            </a>
-                                        </div> --}}
                                     </div>
                                     <div class="right"><i class="fa fa-3x fa-chevron-right" aria-hidden="true"></i></div>
                                     <div class="left"><i class="fa fa-3x fa-chevron-left" aria-hidden="true"></i></div>
@@ -199,146 +142,90 @@
                             </div>
                         </div>
     <!-- the music -->
-                        <div class="music col-md-12">
+                        <div class="lifestyle col-md-12">
                             <div class="col-md-12 regtangle">
-                                <p>Music</p> 
+                                <p>{{$subcategory->take(3)->last()->title_az}}</p>
                             </div>
                             <div class="col-md-12">
                                 <div class="row">
+                                    
                                     <div class="col-md-6 col-sm-6 col-xs-12">
                                         <div class="row high_img_div">
-                                            <a href="#">
-                                                <img src="http://www.intrawallpaper.com/static/images/dream_village_hd-HD_Zl7opxD.jpg" alt="">
-                                            </a>
+                                            <a href="news/{{$subcategory->take(3)->last()->news->last()->id}}">
+                                                <img src="<?php echo 'images/news_img/'.$subcategory->take(2)->last()->news->last()->main_img?>">
+                                             </a>
                                         </div>
+                                        
                                         <div class="row text">
-                                            <h3>Here's What Instagram</h3>
+                                            <h3>
+                                                <a href="news/{{$subcategory->take(3)->last()->news->last()->id}}">{{str_limit($subcategory->take(3)->last()->news->last()->title_az,50)}}
+                                                </a>
+                                            </h3>
                                             <p>3 hours ago / 0 comments</p>
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. when an unknown printer took a galley.</p>
+                                            <p>{{str_limit($subcategory->take(3)->last()->news->last()->short_desc_az,100)}}</p>
                                         </div>
                                     </div>
+                                    
                                     <div class="col-md-6 col-sm-6 col-xs-12 small">
-                                        <div class="row">
-                                            <div class="col-md-4 col-xs-4 small_img">
-                                                <a href="#">
-                                                    <img src="assets/images/content/1.png" alt="">
-                                                </a>
+                                        @for($i=0;$i<4;$i++)
+                                            <div class="row">
+                                                <div class="col-md-4 col-xs-4 small_img">
+                                                    <a href="#">
+                                                        <img src="http://www.themebin.com/wp-content/uploads/hd-wallpapers/1920x1200/modern_hd.jpg" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-8 col-xs-8 small_text">
+                                                    <a href="#"> 
+                                                    <h5>A New Yorker doesn't necessarily come from</h5></a>
+                                                    <p>3 minutes ago /<a href=""> 0 comments</a></p>
+                                                </div>
                                             </div>
-                                            <div class="col-md-8 col-xs-8 small_text">
-                                                <a href="#"> 
-                                                <h5>A New Yorker doesn't necessarily come from</h5></a>
-                                                <p>3 minutes ago /<a href=""> 0 comments</a></p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-4 col-xs-4 small_img">
-                                                <a href="#">
-                                                    <img src="assets/images/content/1.png" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="col-md-8 col-xs-8 small_text">
-                                                <a href="#"> 
-                                                <h5>A New Yorker doesn't necessarily come from</h5></a>
-                                                <p>3 minutes ago /<a href=""> 0 comments</a></p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-4 col-xs-4 small_img">
-                                                <a href="#">
-                                                    <img src="assets/images/content/1.png" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="col-md-8 col-xs-8 small_text">
-                                                <a href="#"> 
-                                                <h5>A New Yorker doesn't necessarily come from</h5></a>
-                                                <p>3 minutes ago /<a href=""> 0 comments</a></p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-4 col-xs-4 small_img">
-                                                <a href="#">
-                                                    <img src="assets/images/content/1.png" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="col-md-8 col-xs-8 small_text">
-                                                <a href="#"> 
-                                                <h5>A New Yorker doesn't necessarily come from</h5></a>
-                                                <p>3 minutes ago /<a href=""> 0 comments</a></p>
-                                            </div>
-                                        </div>
+                                        @endfor
                                     </div>
                                 </div>
                             </div>
                         </div>
     <!-- the world news -->
-                        <div class="world_news col-md-12">
+                        <div class="lifestyle col-md-12">
                             <div class="col-md-12 regtangle">
-                                <p>World News</p>
+                                <p>{{$subcategory->take(2)->last()->title_az}}</p>
                             </div>
                             <div class="col-md-12">
                                 <div class="row">
+                                    
                                     <div class="col-md-6 col-sm-6 col-xs-12">
                                         <div class="row high_img_div">
-                                            <a href="#">
-                                                <img src="assets/images/content/1.png" alt="">
-                                            </a>
+                                            <a href="news/{{$subcategory->take(2)->last()->news->last()->id}}">
+                                                <img src="<?php echo 'images/news_img/'.$subcategory->take(2)->last()->news->last()->main_img?>">
+                                             </a>
                                         </div>
+                                        
                                         <div class="row text">
-                                            <h3>Here's What Instagram</h3>
+                                            <h3>
+                                                <a href="news/{{$subcategory->take(2)->last()->news->last()->id}}">{{str_limit($subcategory->take(2)->last()->news->last()->title_az,50)}}
+                                                </a>
+                                            </h3>
                                             <p>3 hours ago / 0 comments</p>
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. when an unknown printer took a galley.</p>
+                                            <p>{{str_limit($subcategory->take(2)->last()->news->last()->short_desc_az,100)}}</p>
                                         </div>
                                     </div>
+                                    
                                     <div class="col-md-6 col-sm-6 col-xs-12 small">
-                                        <div class="row">
-                                            <div class="col-md-4 col-xs-4 small_img">
-                                                <a href="#">
-                                                    <img src="http://www.intrawallpaper.com/static/images/hd-wallpaper-6_NLl9H49.jpg" alt="">
-                                                </a>
+                                        @for($i=0;$i<4;$i++)
+                                            <div class="row">
+                                                <div class="col-md-4 col-xs-4 small_img">
+                                                    <a href="#">
+                                                        <img src="http://www.themebin.com/wp-content/uploads/hd-wallpapers/1920x1200/modern_hd.jpg" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-8 col-xs-8 small_text">
+                                                    <a href="#"> 
+                                                        <h5>A New Yorker doesn't necessarily come from</h5>
+                                                    </a>
+                                                    <p>3 minutes ago /<a href=""> 0 comments</a></p>
+                                                </div>
                                             </div>
-                                            <div class="col-md-8 col-xs-8 small_text">
-                                                <a href="#"> 
-                                                <h5>A New Yorker doesn't necessarily come from</h5></a>
-                                                <p>3 minutes ago /<a href=""> 0 comments</a></p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-4 col-xs-4 small_img">
-                                                <a href="#">
-                                                    <img src="assets/images/content//1.png" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="col-md-8 col-xs-8 small_text">
-                                                <a href="#"> 
-                                                    <h5>A New Yorker doesn't necessarily come from</h5>
-                                                </a>
-                                                <p>3 minutes ago /<a href=""> 0 comments</a></p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-4 col-xs-4 small_img">
-                                                <a href="#">
-                                                    <img src="assets/images/content/1.png" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="col-md-8 col-xs-8 small_text">
-                                                <a href="#"> 
-                                                <h5>A New Yorker doesn't necessarily come from</h5></a>
-                                                <p>3 minutes ago /<a href=""> 0 comments</a></p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-4 col-xs-4 small_img">
-                                                <a href="#">
-                                                    <img src="assets/images/content/1.png" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="col-md-8 col-xs-8 small_text">
-                                                <a href="#"> 
-                                                <h5>A New Yorker doesn't necessarily come from</h5></a>
-                                                <p>3 minutes ago /<a href=""> 0 comments</a></p>
-                                            </div>
-                                        </div>
+                                        @endfor
                                     </div>
                                 </div>
                             </div>

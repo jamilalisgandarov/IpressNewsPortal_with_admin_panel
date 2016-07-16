@@ -26,7 +26,7 @@
             <td class="text-center">{{$subcata->title_en}}</td>
             <td class="text-center">{{$subcata->title_ru}}</td>
             <td class="text-center">
-                <a class="mm" href="/edit/{{$subcata->id}}/subcategory"><button class="btn btn-success">Edit</button></a> &nbsp
+                <a class="mm" href="/admin/edit/{{$subcata->id}}/subcategory"><button class="btn btn-success">Edit</button></a> &nbsp
                 <button data-toggle="modal" data-target="#gridSystemModal" class="btn btn-danger" >Delete</button>
             </td>
         </tr>
@@ -45,7 +45,7 @@
                                 <span> Do you want to delete : <b> {{$subcata->title_az}} </b></span>
                             </div>
                             <div class="modal-footer">
-                                <a href="/delete/{{$subcata->id}}/subcategory">
+                                <a href="/admin/delete/{{$subcata->id}}/subcategory">
                                     <button type="button" class="btn btn-danger">Delete</button>
                                 </a>
                                 <button type="button" class="btn btn-primary"  data-dismiss="modal">Back</button>
@@ -61,7 +61,7 @@
 </table>
 
 @endif
-    <a href="/add/{{$catId->id}}/subcategory">
+    <a href="/admin/add/{{$catId->id}}/subcategory">
         <button style="margin-bottom:20px" class="btn btn-primary">Create category for <b style="color:black">{{$catId->title_az}}</b></button>
     </a>
 </div>

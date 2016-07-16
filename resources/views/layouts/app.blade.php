@@ -9,17 +9,16 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
-  <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+  <link href="/assets/css/bootstrap.css" rel="stylesheet">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.css">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="/dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="/dist/css/skins/_all-skins.min.css">
-<script src="/plugins/jQuery/jquery-2.2.3.min.js"></script>
+  <script src="/assets/js/jquery-1.12.4.js"></script>
   <script src="//cdn.ckeditor.com/4.5.9/standard/ckeditor.js"></script>
   <!-- iCheck -->
 </head>
@@ -45,7 +44,7 @@
         <ul class="nav navbar-nav">
          @if(\Auth::user()->status==0)
            <li class=" notifications-menu">
-              <a href="/requests" >
+              <a href="/admin/requests" >
                    
                 <i class="fa fa-user-plus" aria-hidden="true"></i> 
                 @if(count(App\Author::all())!=0)
@@ -68,7 +67,8 @@
             <ul class="dropdown-menu" style="width:0 !important">
               <!-- Menu Body -->
               <li >
-                  <a href="/logout" data-toggle="modal" data-target="#gridSystemModal" class=" dropdown-item btn-default ">Sign out</a> </li>
+                  <a href="/logout"  class=" dropdown-item btn-default ">Sign out</a> 
+              </li>
             </ul>
           </li>
         </ul>
@@ -108,7 +108,7 @@
               </a>
             </li>  
             <li class="treeview">
-              <a href="/news/add">
+              <a href="/admin/news/add">
                 <i class="fa fa-plus" aria-hidden="true"></i> <span>Add News</span>
               </a>
             </li>           
@@ -122,13 +122,13 @@
             </a>
             <ul class="treeview-menu">
               <li class="treeview">
-                <a href="/gallery">
+                <a href="/admin/gallery">
                   <i class="fa fa-file-text-o" aria-hidden="true"></i>
                   <span>All Galleries</span><span class="label label-default pull-right">{{count(App\Gallery::all())}}</span>
                 </a>
               </li>  
               <li class="treeview">
-                <a href="/add/news/gallery">
+                <a href="/admin/add/news/gallery">
                   <i class="fa fa-plus" aria-hidden="true"></i> <span>Add Gallery</span>
                 </a>
               </li>           
@@ -136,12 +136,12 @@
         </li>
          @if(\Auth::user()->status==0)
         <li class="treeview">
-          <a href="/requests">
+          <a href="/admin/requests">
             <i class="fa fa-user-plus" aria-hidden="true"></i> <span>Author Requests</span>
           </a>
         </li>
         <li class="treeview">
-          <a href="/editorsInfo">
+          <a href="/admin/editorsInfo">
       <i class="fa fa-user" aria-hidden="true"></i> <span>Authors</span>
           </a>
         </li>
@@ -151,12 +151,12 @@
               </a>
           <ul class="treeview-menu">
             <li class="treeview">
-              <a href="/category">
+              <a href="/admin/category">
                 <i class="fa fa-th-list" aria-hidden="true"></i></i> <span>All Categories</span>
               </a>
             </li>
             <li class="treeview">
-              <a href="/add/category">
+              <a href="/admin/add/category">
                 <i class="fa fa-plus" aria-hidden="true"></i></i> <span>Add Category</span>
               </a>
             </li>             
@@ -266,7 +266,6 @@
 <!-- datepicker -->
 <script src="/plugins/datepicker/bootstrap-datepicker.js"></script>
 <!-- Bootstrap WYSIHTML5 -->
-<script src="/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 <!-- Slimscroll -->
 <script src="/plugins/slimScroll/jquery.slimscroll.min.js"></script>
 <!-- FastClick -->

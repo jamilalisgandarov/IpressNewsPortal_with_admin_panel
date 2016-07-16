@@ -22,11 +22,11 @@
 				
 				<tr>
 					<td class="text-center"><?php $count=$count+1 ;echo $count ?></td>
-					<td class="text-center"><a href="/category/{{$data->id}}">{{$data->title_az}} </a></td>
-					<td class="text-center"><a href="/category/{{$data->id}}">{{$data->title_en}} </a></td>
-					<td class="text-center"><a href="/category/{{$data->id}}">{{$data->title_ru}} </a></td>
+					<td class="text-center"><a href="/admin/category/{{$data->id}}">{{$data->title_az}} </a></td>
+					<td class="text-center"><a href="/admin/category/{{$data->id}}">{{$data->title_en}} </a></td>
+					<td class="text-center"><a href="/admin/category/{{$data->id}}">{{$data->title_ru}} </a></td>
 					<td class="text-center">
-						<a href="edit/{{$data->id}}/category"><button class="btn btn-success">Edit</button></a>	&nbsp
+						<a href="/admin/edit/{{$data->id}}/category"><button class="btn btn-success">Edit</button></a>	&nbsp
 						<button data-toggle="modal" data-target="#gridSystemModal" class="btn btn-danger">Delete</button>
 					</td>
 				</tr>
@@ -44,7 +44,7 @@
                                 <span> Do you want to delete : <b> {{$data->title_az}} </b></span>
                             </div>
                             <div class="modal-footer">
-                                <a href="delete/{{$data->id}}/category">
+                                <a href="/admin/delete/{{$data->id}}/category">
                                     <button type="button" class="btn btn-danger">Delete</button>
                                 </a>
                                 <button type="button" class="btn btn-primary"  data-dismiss="modal">Back</button>

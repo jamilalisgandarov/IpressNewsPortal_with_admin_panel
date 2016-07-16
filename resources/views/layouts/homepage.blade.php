@@ -436,7 +436,7 @@
                            
                             <div class="small_div col-md-12">
                                 <div class="small_img col-md-4">
-                                    <div class="imgM pull-left"><a href="#"><img src="<?php echo '/images/news_img/'.$news->main_img ?>"></a></div>
+                                    <div class="imgM pull-left"><a href="/news/{{$news->id}}"><img src="<?php echo '/images/news_img/'.$news->main_img ?>"></a></div>
                                 </div>
                                 <div class="col-xs-6 col-md-8">
                                     <p class="small_text">{{$news->title_az}}</p>
@@ -474,7 +474,7 @@
                              @foreach((App\News::all()->take(3)) as $news)
                             <div class="small_div col-md-12">
                                 <div class="small_img col-md-4">
-                                    <div class="imgM pull-left"><a href="#"> <img src="<?php echo '/images/news_img/'.$news->main_img ?>"></a></div>
+                                    <div class="imgM pull-left"><a href="/news/{{$news->id}}"> <img src="<?php echo '/images/news_img/'.$news->main_img ?>"></a></div>
                                 </div>
                                 <div class="col-xs-8 col-md-8">
                                     <p class="small_text">{{$news->title_az}}</p>
@@ -482,7 +482,7 @@
                                         <div class="reviews_rate pull-left col-md-1">
                                             <i class="fa fa-star-o" aria-hidden="true"><p>9.25</p></i>
                                         </div> 
-                                        <div class="reviews_category pull-left lightblue_bg"><a href="#"><p>{{$news->category->title_az}}</p></a></div>
+                                        <div class="reviews_category pull-left lightblue_bg"><p>{{$news->category->title_az}}</p></div>
                                     </div>
                                 </div>
                             </div>

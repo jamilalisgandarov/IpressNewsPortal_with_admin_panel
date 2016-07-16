@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div style="padding-left:40px; padding-right:40px; min-height:500px">
-  <form method="post" action="/update/{{$catId->id}}/subcategory">
+  <form method="post" action="/admin/update/{{$catId->id}}/subcategory">
     {{ method_field('PATCH') }}
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
     <div class="form-group">

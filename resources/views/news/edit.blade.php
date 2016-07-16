@@ -3,16 +3,8 @@
 @section('content')
 
 	<div class="container">
-		<div class="" style="">
-	    		<ul class="nav nav-tabs">
-				  	<li role="presentation"><a href="{{'/'}}">Home</a></li>
-				  	<li role="presentation"><a href="{{'/news/add'}}">Add News</a></li>
-				  	<li role="presentation" class="active"><a href="/news/{{$news->id}}/edit">Edit News</a></li>
-				</ul>
-			<hr>
-    	</div>
 		<div class="">
-			<form method="post"  enctype="multipart/form-data" action="/news/{{$news->id}}/update">
+			<form method="post"  enctype="multipart/form-data" action="/admin/news/{{$news->id}}/update">
 				{{ method_field('patch') }}
 				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 				<div class="row">

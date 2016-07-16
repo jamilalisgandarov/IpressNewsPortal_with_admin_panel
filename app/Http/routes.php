@@ -13,56 +13,57 @@
 
 
 
+//adminPamnel
 
 Route::group(['middleware'=>['web','auth']],function (){
 
 	//gallery , slider 
-	Route::get('/gallery','FileController@index');
-	Route::get('/{news}/gallery','FileController@newsPhoto');
-	Route::get('/{news}/add/photo','FileController@add');
-	Route::get('/add/news/gallery','FileController@withNews');
-	Route::post('/gallery/{news}/upload','FileController@store');
-	Route::get('/gallery/{gallery}/edit' ,'FileController@edit');
-	Route::patch('/gallery/{news}/{gallery}/update' ,'FileController@update');
-	Route::get('/gallery/{gallery}/delete' ,'FileController@delete');
+	Route::get('/admin/gallery','FileController@index');
+	Route::get('/admin/{news}/gallery','FileController@newsPhoto');
+	Route::get('/admin/{news}/add/photo','FileController@add');
+	Route::get('/admin/add/news/gallery','FileController@withNews');
+	Route::post('/admin/gallery/{news}/upload','FileController@store');
+	Route::get('/admin/gallery/{gallery}/edit' ,'FileController@edit');
+	Route::patch('/admin/gallery/{news}/{gallery}/update' ,'FileController@update');
+	Route::get('/admin/gallery/{gallery}/delete' ,'FileController@delete');
 
 	//news
 	Route::get('/admin','NewsController@showNews');
-	Route::get('/news/add','NewsController@addNews');
-	Route::post('/news/insert','NewsController@insert');
-	Route::get('/news/{news}/edit','NewsController@edit');
-	Route::patch('/news/{news}/update','NewsController@update');
-	Route::get('/news/{news}/delete','NewsController@delete');
+	Route::get('/admin/news/add','NewsController@addNews');
+	Route::post('/admin/news/insert','NewsController@insert');
+	Route::get('/admin/news/{news}/edit','NewsController@edit');
+	Route::patch('/admin/news/{news}/update','NewsController@update');
+	Route::get('/admin/news/{news}/delete','NewsController@delete');
 	
 	//========================== Category =============================
 
 	Route::group(['middleware'=>['status']],function (){
-		Route::get('/category/{catId}','CategoriesController@show');
-		Route::get('/add/category','CategoriesController@create');
-		Route::post('/add/store','CategoriesController@store');
-		Route::get('/edit/{catId}/category','CategoriesController@edit');
-		Route::patch('/update/{catId}/category','CategoriesController@update');
-		Route::get('/delete/{catId}/category','CategoriesController@destroy');
-		Route::get('/category','CategoriesController@showall');
-		Route::get('/select','CategoriesController@select');
+		Route::get('/admin/category/{catId}','CategoriesController@show');
+		Route::get('/admin/add/category','CategoriesController@create');
+		Route::post('/admin/add/store','CategoriesController@store');
+		Route::get('/admin/edit/{catId}/category','CategoriesController@edit');
+		Route::patch('/admin/update/{catId}/category','CategoriesController@update');
+		Route::get('/admin/delete/{catId}/category','CategoriesController@destroy');
+		Route::get('/admin/category','CategoriesController@showall');
+		Route::get('/admin/select','CategoriesController@select');
 	
 	//========================== SubCategory =============================
 
-		Route::get('/add/{catId}/subcategory','SubCategoriesController@create');
-		Route::post('/store/{catId}/subcategory','SubCategoriesController@store');
-		Route::get('/edit/{catId}/subcategory','SubCategoriesController@edit');
-		Route::patch('/update/{catId}/subcategory','SubCategoriesController@update');
-		Route::get('/delete/{catId}/subcategory','SubCategoriesController@destroy');
+		Route::get('/admin/add/{catId}/subcategory','SubCategoriesController@create');
+		Route::post('/admin/store/{catId}/subcategory','SubCategoriesController@store');
+		Route::get('/admin/edit/{catId}/subcategory','SubCategoriesController@edit');
+		Route::patch('/admin/update/{catId}/subcategory','SubCategoriesController@update');
+		Route::get('/admin/delete/{catId}/subcategory','SubCategoriesController@destroy');
 
-		Route::get('/requests', 'MainController@showRequests');
-		Route::get('/delete/{author}', 'MainController@delete');
+		Route::get('/admin/requests', 'MainController@showRequests');
+		Route::get('/admin/delete/{author}', 'MainController@delete');
 
-		Route::get('/editorsInfo', function (){
+		Route::get('/admin/editorsInfo', function (){
 		return view('adminPanel.editorsInfo');
 		});
-		Route::get('/insert/{author}','MainController@insert');
-		Route::get('/user/delete/{user}', 'MainController@userDelete');
-		Route::get('/editorsInfo', function (){
+		Route::get('/admin/insert/{author}','MainController@insert');
+		Route::get('/admin/user/delete/{user}', 'MainController@userDelete');
+		Route::get('/admin/editorsInfo', function (){
 		return view('adminPanel.editorsInfo');
 		});
 
@@ -75,15 +76,14 @@ Route::group(['middleware'=>['web','auth']],function (){
 		Route::post('/newsData', 'AjaxRequest@newsData');
 	});
 });
-Route::get('/authorRegistration', function () {
+Route::get('/admin/authorRegistration', function () {
     return view('registrationForm.register');});
-Route::post('/authorRegistration/submitted', 'MainController@register');
+Route::post('/admin/authorRegistration/submitted', 'MainController@register');
 Route::auth();
 
 
 	
-
-// website
+// website routes
 
 Route::get('/','HomePageController@index');
 Route::get('/news/{news}','HomePageController@show');

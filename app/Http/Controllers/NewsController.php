@@ -23,18 +23,19 @@ class NewsController extends Controller
     {
         $id                    =\Auth::user()->id;
         $user                  =User::find($id);
-    	$news                   =News::all();
-        $categories             =Category::all();
+    	$news                  =News::all();
+        $categories            =Category::all();
     	return view('news.add',compact('news','categories','user'));
     }
     public function insert(Request $request){
         $this->validate($request, [
         
         'short_desc_az' => 'required',
-        'title_az'   =>'required',
-        'desc_az'  => 'required',
-        'keywords' => 'required',
-        'main_img' => 'required',
+        'title_az'      =>'required',
+        'desc_az'       => 'required',
+        'keywords'      => 'required',
+        'main_img'      => 'required',
+        'category_id'   => 'required',
         ]);
 
         if($request->visibility =='on'){
@@ -84,9 +85,9 @@ class NewsController extends Controller
         $this->validate($request, [
         
         'short_desc_az' => 'required',
-        'title_az'   =>'required',
-        'desc_az' => 'required',
-        'keywords' => 'required',
+        'title_az'      =>'required',
+        'desc_az'       => 'required',
+        'keywords'      => 'required',
         ]);
 
         if($request->visibility=='on'){

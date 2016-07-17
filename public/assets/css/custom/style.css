@@ -786,7 +786,8 @@ body {
           margin: 0; }
     #content-wrap .carousel_posts .ad {
       position: absolute;
-      bottom: 12%; }
+      bottom: 12%;
+      left: 0; }
       #content-wrap .carousel_posts .ad .ads {
         height: 60px;
         width: 460px;

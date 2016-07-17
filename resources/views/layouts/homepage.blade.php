@@ -34,6 +34,7 @@
                 <div class="container">
                     <div class="row">
                         <div class=" col-md-6 height hotNewsMain col-xs-12 overflow flex ">
+                        @if(count(App\News::all())>0)
                             <a href="/news/{{App\News::all()->last()->id}}">
                                 <div class="live-cta">
                                     <div class="live-icon">
@@ -47,6 +48,7 @@
                                     <p class="hotNewsText">{{str_limit(App\News::all()->last()->title_az,60)}}</p>
                                 </div>
                             </a>
+                        @endif
                         </div>
                         <div class="col-md-6">
                         <div class="col-md-5  col-md-offset-1  push height flex col-xs-4">
@@ -115,17 +117,19 @@
                                         </div>
                                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                             <ul class="nav mainul dropdown navbar-nav">
-                                            @foreach((App\Category::all()) as $category)
-                                                <li class="dropdown">
-                                                     <a class="dropdown-toggle" data-toggle="dropdown" role="button">{{$category->title_az}}</a><span class="hover"></span>
-                                                     <ul class="dropdown-menu" >
-                                                     @foreach($category->subcategories->all() as $subcategory)
-                                                        <li><a href="/news/category/{{$subcategory->id}}">{{ $subcategory->title_az}}</a></li>
-                                                      
-                                                        @endforeach
-                                                     </ul>
-                                                </li>
-                                            @endforeach
+                                            @if(count(App\Category::all())>0)
+                                                @foreach((App\Category::all()) as $category)
+                                                    <li class="dropdown">
+                                                         <a class="dropdown-toggle" data-toggle="dropdown" role="button">{{$category->title_az}}</a><span class="hover"></span>
+                                                         <ul class="dropdown-menu" >
+                                                         @foreach($category->subcategories->all() as $subcategory)
+                                                            <li><a href="/news/category/{{$subcategory->id}}">{{ $subcategory->title_az}}</a></li>
+                                                          
+                                                            @endforeach
+                                                         </ul>
+                                                    </li>
+                                                @endforeach
+                                            @endif
                                                 <ul class="nav navbar-nav navbar-right" style="margin:0px;">
                                                     <li>
                                                         <div class="mainSearch col-xs-12">
@@ -175,8 +179,11 @@
     <div class="col-md-12 ">
         <div class="row">
             <div class="doublePort regtangle">
+                @if(count(App\Subcategory::all())>0)
                 <p>{{App\Subcategory::all()->take(1)->last()->title_az}}</p>
+                @endif
             </div>
+            @if(count(App\Subcategory::all())>0&&count(App\News::all())>0)
                 @foreach(App\Subcategory::all()->take(1)->last()->news->take(5) as $news)
                     <div class="row">
                         <div class="col-md-4 col-xs-4 small_img">
@@ -193,7 +200,7 @@
                     </div>
                     <div class="line"></div>
                 @endforeach
-
+            @endif
                 
                 <div class="" >
                     <br>
@@ -270,9 +277,11 @@
                 <div class="">
                     <br>
                     <div class="doublePort regtangle">
+                    @if(count(App\Subcategory::all())>0)
                         <p>{{App\Subcategory::all()->take(1)->last()->title_az}}</p>
+                    @endif
                     </div>
-                    
+                    @if(count(App\Subcategory::all())>0&&count(App\News::all())>0)
                     @foreach(App\Subcategory::all()->take(1)->last()->news->take(4) as $news)
                     <div class="row">
                         <div class="col-md-4 col-xs-4 small_img">
@@ -288,8 +297,8 @@
                         </div>
                     </div>
                     <div class="line"></div>
-                @endforeach
-                       
+                    @endforeach
+                    @endif 
                 </div>
             </div>
         </section>
@@ -320,8 +329,9 @@
                             <div class="same_top regtangle col-md-12">
                                 <h4>Recent Posts</h4>
                             </div>
-                            @foreach(App\News::orderBy('id', 'DESC')->get()->take(3) as $news)
-                           
+                            @if(count(App\News::all())>0)
+                                @foreach(App\News::orderBy('id', 'DESC')->get()->take(3) as $news)
+                            
                             <div class="small_div col-md-12">
                                 <div class="small_img col-md-4">
                                     <div class="imgM pull-left"><a href="/news/{{$news->id}}"><img src="<?php echo '/images/news_img/'.$news->main_img ?>"></a></div>
@@ -332,6 +342,7 @@
                                 </div>
                             </div>
                             @endforeach
+                            @endif
                         </div>
                     </div>
                     <!---->
@@ -340,6 +351,7 @@
                             <div class="same_top regtangle col-md-12">
                                 <h4>Best Reviews</h4>
                             </div>
+                            @if(count(App\News::all())>0)
                              @foreach((App\News::all()->take(3)) as $news)
                             <div class="small_div col-md-12">
                                 <div class="small_img col-md-4">
@@ -356,7 +368,8 @@
                                 </div>
                             </div>
                             @endforeach
-                            </div>
+                            @endif
+                        </div>
                     </div>
                     <div class="newsletters same  one1 col-md-3">
                         <div class="row">

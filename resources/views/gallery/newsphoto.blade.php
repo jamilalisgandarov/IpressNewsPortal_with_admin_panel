@@ -4,6 +4,7 @@
 
 
 <div class="container">
+				@if(count(App\Gallery::all())>0&&count(App\News::all())>0)
 				@foreach($news->gallery->all() as $gallery)
 					<div class="col-md-3">
 						<div class="card" style="margin-bottom: 20px;">
@@ -37,4 +38,5 @@
 					</div>
 					
 		@endforeach
+		@endif
  @endsection

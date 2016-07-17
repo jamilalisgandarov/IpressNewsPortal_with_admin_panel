@@ -69,16 +69,16 @@ Route::group(['middleware'=>['web','auth']],function (){
 
 		
 		//Ajax Requests authors
-		Route::post('/userData', 'AjaxRequest@userData');
-		Route::post('/authorData', 'AjaxRequest@authorData');
-		Route::get('/checkAuthors', 'AjaxRequest@checkAuthors');
+		Route::post('/admin/userData', 'AjaxRequest@userData');
+		Route::post('/admin/authorData', 'AjaxRequest@authorData');
+		Route::get('/admin/checkAuthors', 'AjaxRequest@checkAuthors');
 		// news
 		Route::post('/newsData', 'AjaxRequest@newsData');
 	});
 });
-Route::get('/admin/authorRegistration', function () {
+Route::get('/authorRegistration', function () {
     return view('registrationForm.register');});
-Route::post('/admin/authorRegistration/submitted', 'MainController@register');
+Route::post('/authorRegistration/submitted', 'MainController@register');
 Route::auth();
 
 

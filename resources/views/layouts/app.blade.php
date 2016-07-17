@@ -98,13 +98,20 @@
               <a href="/">
                 <i class="fa fa-newspaper-o" aria-hidden="true"></i></i>
                 <span>News</span>
-                <span class="label label-default pull-right">{{count(App\News::all())}}</span>
+                <span class="label label-default pull-right">
+                  @if(count(App\News::all())>0)
+                  {{count(App\News::all())}}
+                  @endif
+                </span>
               </a>
           <ul class="treeview-menu">
             <li class="treeview">
               <a href="/admin">
                 <i class="fa fa-file-text-o" aria-hidden="true"></i>
-                <span>All News</span><span class="label label-default pull-right">{{count(App\News::all())}}</span>
+                <span>All News</span><span class="label label-default pull-right">  @if(count(App\News::all())>0)
+                  {{count(App\News::all())}}
+                  @endif
+                </span>
               </a>
             </li>  
             <li class="treeview">
@@ -118,13 +125,21 @@
             <a href="/">
               <i class="fa fa-file-image-o" aria-hidden="true"></i></i>
               <span>Galleries</span>
-              <span class="label label-default pull-right">{{count(App\Gallery::all())}}</span>
+              <span class="label label-default pull-right">
+                @if(count(App\Gallery::all())>0)
+                  {{count(App\Gallery::all())}}
+                @endif
+              </span>
             </a>
             <ul class="treeview-menu">
               <li class="treeview">
                 <a href="/admin/gallery">
                   <i class="fa fa-file-text-o" aria-hidden="true"></i>
-                  <span>All Galleries</span><span class="label label-default pull-right">{{count(App\Gallery::all())}}</span>
+                  <span>All Galleries</span><span class="label label-default pull-right">
+                    @if(count(App\Gallery::all())>0)
+                      {{count(App\Gallery::all())}}
+                    @endif
+                  </span>
                 </a>
               </li>  
               <li class="treeview">

@@ -20,6 +20,7 @@
 		</thead>
 		<tbody>
 			<?php $count=1 ?>
+			@if(count(App\News::all())>0)
 			@foreach($newsAll as $news)
 				<tr>
 					<td><?php echo $count;$count=$count+1 ?></td>
@@ -59,7 +60,7 @@
 
 				
 			@endforeach
-				
+			@endif
 			</tbody>
 			
 		</table>
@@ -95,9 +96,11 @@
               <span>     Do you want to delete: <span class="newsData"></span>  ? </span>
             </div>
             <div class="modal-footer">
+            @if(count(App\News::all())>0)
               <a  href='/admin/news/{{$news->id}}/delete'>
                 <button type="button" class="btn btn-danger">Delete</button>
               </a>
+             @endif
               <button type="button" class="btn btn-primary"  data-dismiss="modal">Back</button>
             </div>
           </div><!-- /.modal-content -->

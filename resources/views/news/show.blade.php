@@ -19,7 +19,7 @@
 	    			</tr>
 	    		</thead>
 	    		<tbody>
-	    			
+	    			@if(count(News::all())>0)
 					@for($i=1;$i<count($news);$i++)
 						<tr>
 		    				<td>{{$i+1}}</td>
@@ -45,7 +45,7 @@
 		    				</td>
 		    			</tr>
 	    			@endfor
-	    			
+	    			@endif
 	    		</tbody>
     			
 			</table>

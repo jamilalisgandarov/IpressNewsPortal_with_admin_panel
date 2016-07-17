@@ -16,6 +16,7 @@
 		</thead>
 		<tbody>
 			<?php $count=1 ?>
+			@if(count(App\Gallery::all())>0&&count(App\News::all())>0)
 			@foreach($newsAll as $news)
 				<tr>
 					<td><?php echo $count;$count=$count+1 ?></td>
@@ -44,6 +45,7 @@
 					
 				</tr>
 				@endforeach
+				@endif
 			</tbody>
 		</table>
 	</div>

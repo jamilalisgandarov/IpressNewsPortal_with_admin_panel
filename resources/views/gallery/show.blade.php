@@ -4,6 +4,7 @@
 
 
 <div class="container">
+			@if(count(App\Gallery::all())>0&&count(App\News::all())>0)
 			@foreach($newsAll as $news)
 				@foreach($news->gallery->all() as $gallery)
 					<div class="col-md-3">
@@ -41,6 +42,7 @@
 					
 		@endforeach
  	@endforeach
+ 	@endif
  @endsection
 
 

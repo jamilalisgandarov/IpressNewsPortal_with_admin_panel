@@ -4,14 +4,17 @@
 
 <div class="col-md-12 col-xs-12 news">
 	<div class="row">
+	@if(count($news)>0)
 		<div class="card col-md-12 col-xs-12">
 			<div class="card-block">
-				<h4 class="card-title">{{$news->title_az}}</h4>
+				<h4 class="card-title">
+					{{$news->title_az}}
+				</h4>
 				<hr>
 				<div class="col-md-12">
 					<div class="row">
-						<p class="pull-right">Yazar : {{$news->user->first_name." ".$news->user->last_name }}</p>
-						<p class="pull-left">Tarix : {{$news->updated_at}}</p>
+						<p class="pull-left">Yazar : <b>{{$news->user->first_name." ".$news->user->last_name }}</b></p>
+						<p class="pull-right">Tarix : {{$news->updated_at}}</p>
 					</div>
 				</div>
 			</div>
@@ -22,6 +25,7 @@
 			</div>
 
 		</div>
+	@endif
 	</div>
 	<div class="row">
 		<div class="col-md-12 col-xs-12 gallery">

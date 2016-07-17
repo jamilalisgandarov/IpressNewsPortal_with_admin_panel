@@ -58,9 +58,9 @@
                                 <p>{{$subcategory->first()->title_az}}</p>
                             @endif
                             </div>
-                            <div class="col-md-12">
+                            <div class="col-md-12 padding-right-0">
                                 <div class="row">
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="col-md-6 col-sm-6 col-xs-12 padding-right-0">
                                         <div class="row day_post_img ">
                                             @if(count(App\News::all())>0&&count(App\Subcategory::all()))
                                             <a href="/news/{{$subcategory->first()->news->last()->id}}">
@@ -90,10 +90,10 @@
                                 <p>{{$subcategory->take(2)->last()->title_az}}</p>
                             @endif
                             </div>
-                            <div class="col-md-12">
+                            <div class="col-md-12 padding-right-0">
                                 <div class="row">
                                     
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="col-md-6 col-sm-6 col-xs-12 padding-right-0">
                                         <div class="row high_img_div">
                                             @if(count(App\News::all())>0&&count(App\Subcategory::all()))
                                             <a href="/news/{{$subcategory->take(2)->last()->news->last()->id}}">
@@ -175,10 +175,10 @@
                                 <p>{{$subcategory->take(3)->last()->title_az}}</p>
                             @endif
                             </div>
-                            <div class="col-md-12">
+                            <div class="col-md-12 padding-right-0">
                                 <div class="row">
                                     
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="col-md-6 col-sm-6 col-xs-12 padding-right-0">
                                         <div class="row high_img_div">
                                         @if(count(App\News::all())>0&&count(App\Subcategory::all()))
                                             <a href="/news/{{$subcategory->take(3)->last()->news->last()->id}}">
@@ -230,10 +230,10 @@
                                 <p>{{$subcategory->take(2)->last()->title_az}}</p>
                             @endif
                             </div>
-                            <div class="col-md-12">
+                            <div class="col-md-12 padding-right-0">
                                 <div class="row">
                                     
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="col-md-6 col-sm-6 col-xs-12 padding-right-0">
                                         <div class="row high_img_div">
                                         @if(count(App\News::all())>0&&count(App\Subcategory::all()))
                                             <a href="/news/{{$subcategory->take(1)->last()->news->last()->id}}">

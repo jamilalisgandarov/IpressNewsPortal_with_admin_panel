@@ -8,8 +8,6 @@
     <title>iPress News Portal</title>
     <!-- Bootstrap -->
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/assets/css/slick.css">
-
     <!-- <script src="https://use.fontawesome.com/5d33201c90.js"></script> -->
     <!-- Bootstrap -->
     <link href="/assets/css/bootstrap.css" rel="stylesheet">
@@ -22,7 +20,6 @@
       
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="/assets/js/jquery-1.12.4.js"></script>
-    <script type="text/javascript" src="/assets/js/container.js"></script>
 </head>
 
 <body>
@@ -414,11 +411,10 @@
 
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/assets/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/assets/js/header.js"></script>
-    <script src="/assets/js/main.js"></script>   
-    <script type="text/javascript" src="/assets/js/footer.js"></script>
-    <script type="text/javascript" src="/assets/js/miniSlider.js"></script>
-    <script src="/assets/js/slick.js"></script>
+    <script type="text/javascript" src="/assets/js/main.min.js"></script>
+    {{-- <script src="/assets/js/main.js"></script>   
+    <script type="text/javascript" src="/assets/js/footer.js"></script> --}}{{-- 
+    <script type="text/javascript" src="/assets/js/miniSlider.js"></script> --}}
 </body>
 
 </html>

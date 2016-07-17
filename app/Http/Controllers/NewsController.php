@@ -34,6 +34,7 @@ class NewsController extends Controller
         'title_az'   =>'required',
         'desc_az'  => 'required',
         'keywords' => 'required',
+        'main_img' => 'required',
         ]);
 
         if($request->visibility =='on'){

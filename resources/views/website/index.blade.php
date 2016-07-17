@@ -302,7 +302,7 @@
                                 <div class="col-md-12 regtangle">
                                     <p>Ümumi xəbərlər</p>
                                 </div>
-                                @if(count(App\News::all())>0&&count(App\Subcategory::all()))
+                                @if(count(App\News::all())>1&&count(App\Subcategory::all())>0)
                                 @for($i=0;$i<4;$i++)
                                 <?php $rand=mt_rand(1,count($newsAll)-1);?>
                                 <div class="col-md-12">
